@@ -1313,16 +1313,6 @@ button {
 
 /* --- END PLAYER SECTION CSS --- */
 
-/* --- AESTHETIC ADDITION 2: HIGHLIGHTER TEXT --- */
-.highlight-text {
-  background: linear-gradient(120deg, var(--pink-main) 0%, var(--pink-main) 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 45%;
-  background-position: 0 85%;
-  padding: 0 2px;
-  color: var(--heading);
-}
-
 /* --- AESTHETIC ADDITION 4: FLOATING STICKERS --- */
 .sticker {
   position: absolute;
@@ -3773,7 +3763,7 @@ function renderBookDetail(bookId) {
         </div>
         <div class="detail-box">
           <h5>Favorite quote</h5>
-          <p class="detail-small quote-box highlight-text">${book.quote}</p>
+          <p class="detail-small quote-box">${book.quote}</p>
         </div>
       </div>
 
