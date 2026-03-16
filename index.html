@@ -1004,9 +1004,24 @@ button {
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 0 30px; /* Room for shadows */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  padding: 12px 16px 34px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.episode-card {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin: 4px 0;
 }
 
 .podcast-track::-webkit-scrollbar {
@@ -2484,18 +2499,21 @@ overflow: hidden;
   padding: 22px;
   box-shadow: var(--shadow);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  .connect-card {
-  border: none;
   width: 100%;
   text-align: left;
   cursor: pointer;
   font: inherit;
 }
+
+.connect-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(249, 215, 225, 0.32);
+}
+
 select.newsletter-input {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
 }
 
 .connect-card:hover {
@@ -2955,7 +2973,7 @@ select.newsletter-input {
         <button class="nav-link" data-scroll="#Little-Joys" type="button">Little Joys</button>
         <button class="nav-link" data-scroll="#books" type="button">Books</button>
         <button class="nav-link" data-scroll="#connect" type="button">Connect</button>
-        <button class="nav-link" data-scroll="#inner-circle" type="button">Inner Circle</button>
+        <button class="nav-link" data-scroll="#contact-form" type="button">Contact Me</button>
         <button class="nav-link" data-scroll="#about" type="button">About</button>
       </div>
     </div>
@@ -2978,7 +2996,7 @@ select.newsletter-input {
           <button class="mobile-nav-link" data-scroll="#Little-Joys" type="button">Little Joys</button>
           <button class="mobile-nav-link" data-scroll="#books" type="button">Books</button>
           <button class="mobile-nav-link" data-scroll="#connect" type="button">Connect</button>
-          <button class="mobile-nav-link" data-scroll="#inner-circle" type="button">Inner Circle</button>
+          <button class="mobile-nav-link" data-scroll="#contact-form" type="button">Contact Me</button>
           <button class="mobile-nav-link" data-scroll="#about" type="button">About</button>
         </div>
         <button class="mobile-nav-arrow" id="mobileNavRight" aria-label="Scroll mobile nav right" type="button">→</button>
@@ -3072,7 +3090,7 @@ select.newsletter-input {
             <a href="https://open.spotify.com/show/0d1ueJYmkHtrESzCPtqx4n?si=6rRBAvf-TOSekQAv5Uelpg" target="_blank" rel="noopener" class="podcast-cta" style="text-decoration: none;">🎧 Listen on Spotify</a>
             <a href="https://podcasts.apple.com/lb/podcast/the-sae-talk/id1885249003" target="_blank" rel="noopener" class="podcast-cta" style="text-decoration: none;">🎙️ Listen on Apple</a>
             <button class="podcast-cta primary" id="suggestTopicBtn" type="button">✉ Suggest a topic</button>
-            <button class="podcast-cta" data-scroll="#inner-circle" type="button">💌 Join inner circle</button>
+            <button class="podcast-cta" data-scroll="#contact-form" type="button">💌 Contact me</button>
           </div>
         </div>
       </aside>
@@ -3392,115 +3410,6 @@ select.newsletter-input {
       </div>
     </section>
 
-    <section id="inner-circle" class="section reveal">
-  <div class="section-header">
-    <h2>The Inner Circle</h2>
-    <p>A newsletter for little life updates, new episodes, and favorites worth sharing.</p>
-  </div>
-
-  <div class="glass-card newsletter-card">
-    <div class="newsletter-layout">
-      <div class="newsletter-side">
-        <h3>Join the soft newsletter</h3>
-        <p>
-          Think of it like getting a pretty note in your inbox. New podcast drops, favorite
-          finds, book thoughts, and tiny updates from saesvibe.
-        </p>
-
-        <div class="newsletter-benefits">
-          <div class="newsletter-benefit">
-            <div>💌</div>
-            <div>
-              <strong>Podcast first</strong>
-              <span>Be first to hear when a new Sae Talk episode goes live.</span>
-            </div>
-          </div>
-
-          <div class="newsletter-benefit">
-            <div>📚</div>
-            <div>
-              <strong>Book notes</strong>
-              <span>Get reading updates, ratings, mini reviews, and current favorites.</span>
-            </div>
-          </div>
-
-          <div class="newsletter-benefit">
-            <div>🎀</div>
-            <div>
-              <strong>Monthly favorites</strong>
-              <span>Beauty picks, routines, pink finds, and little lovely things.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <form
-        class="newsletter-form"
-        id="newsletterForm"
-        action="https://formspree.io/f/xyknnzke"
-        method="POST"
-      >
-        <h4>Sign up</h4>
-
-        <input type="hidden" name="_subject" value="New saesvibe Inner Circle signup" />
-        <input type="hidden" name="form_type" value="Inner Circle Signup" />
-
-        <div class="newsletter-form-row">
-          <label for="newsletterName">Your name</label>
-          <input id="newsletterName" name="name" class="newsletter-input" type="text" placeholder="Your name" required />
-        </div>
-
-        <div class="newsletter-form-row">
-          <label for="newsletterEmail">Your email</label>
-          <input id="newsletterEmail" name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
-        </div>
-
-        <div class="newsletter-form-row">
-          <label>What would you love to receive?</label>
-          <div class="newsletter-chips">
-            <label class="newsletter-chip active">
-              <input type="checkbox" checked value="Podcast updates" />
-              Podcast updates
-            </label>
-            <label class="newsletter-chip active">
-              <input type="checkbox" checked value="Book notes" />
-              Book notes
-            </label>
-            <label class="newsletter-chip">
-              <input type="checkbox" value="Beauty favorites" />
-              Beauty favorites
-            </label>
-            <label class="newsletter-chip">
-              <input type="checkbox" value="Monthly favorites" />
-              Monthly favorites
-            </label>
-          </div>
-          <input type="hidden" name="interests" id="newsletterInterests" />
-        </div>
-
-        <div class="newsletter-form-row">
-          <label for="newsletterMessage">Optional note</label>
-          <textarea
-            id="newsletterMessage"
-            name="message"
-            class="newsletter-textarea"
-            placeholder="Tell me the topics you'd love most..."
-          ></textarea>
-        </div>
-
-        <div class="newsletter-actions">
-         <button class="newsletter-btn primary" type="submit">
-          <button class="newsletter-btn secondary" id="copyNewsletterEmailBtn" type="button">Copy newsletter email</button>
-        </div>
-
-        <div class="newsletter-note" id="newsletterStatus">
-          You can keep this as an email sign-up for now, then connect it to a full newsletter service later.
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
 <section id="contact-form" class="section reveal">
   <div class="section-header">
     <h2>Send me a note</h2>
@@ -3511,7 +3420,7 @@ select.newsletter-input {
     <form
       class="newsletter-form"
       id="contactForm"
-      action="https://formspree.io/f/YOUR_FORM_ID"
+      action="https://formspree.io/f/xyknnzke"
       method="POST"
     >
       <h4>Contact saesvibe</h4>
@@ -3543,8 +3452,7 @@ select.newsletter-input {
       <div class="newsletter-form-row">
         <label for="contactMessage">Your message</label>
         <textarea
-          id="contactMessage"
-          name="message"
+          id="          name="message"
           class="newsletter-textarea"
           placeholder="Write your message here..."
           required
@@ -3615,7 +3523,7 @@ select.newsletter-input {
       <button class="heart-sheet-btn" data-scroll="#podcast" type="button">🎧 Go to podcast</button>
       <button class="heart-sheet-btn" data-scroll="#books" type="button">📚 Open books corner</button>
       <button class="heart-sheet-btn" data-scroll="#connect" type="button">🔗 Connect</button>
-      <button class="heart-sheet-btn" data-scroll="#inner-circle" type="button">💌 Join inner circle</button>
+      <button class="heart-sheet-btn" data-scroll="#contact-form" type="button">💌 Contact me</button>
       <button class="heart-sheet-btn" id="floatingTopBtn" type="button">💗 Back to top</button>
     </div>
     <button class="floating-heart-btn" id="floatingHeartBtn" aria-label="Open quick access menu" type="button">💗</button>
@@ -3635,7 +3543,6 @@ const books = [
     genre: "Self-help",
     status: "Ongoing",
     vibe: "Discipline",
-    // REPLACE THIS URL with your actual image link
     cover: "assets/atomic-cover.jpeg",
     pages: 320,
     year: 2018,
@@ -3685,8 +3592,6 @@ const scrollTopBtn = document.getElementById("scrollTopBtn");
 const copySocialsBtn = document.getElementById("copySocialsBtn");
 const listenerClubBtn = document.getElementById("listenerClubBtn");
 const suggestTopicBtn = document.getElementById("suggestTopicBtn");
-const joinNewsletterBtn = document.getElementById("joinNewsletterBtn");
-const copyNewsletterEmailBtn = document.getElementById("copyNewsletterEmailBtn");
 const floatingHeartBtn = document.getElementById("floatingHeartBtn");
 const floatingTopBtn = document.getElementById("floatingTopBtn");
 const heartSheet = document.getElementById("heartSheet");
@@ -3695,10 +3600,6 @@ const mobileNavLeft = document.getElementById("mobileNavLeft");
 const mobileNavRight = document.getElementById("mobileNavRight");
 const toastWrap = document.getElementById("toastWrap");
 const htmlEl = document.documentElement;
-
-const newsletterName = document.getElementById("newsletterName");
-const newsletterEmail = document.getElementById("newsletterEmail");
-const newsletterMessage = document.getElementById("newsletterMessage");
 
 const podcastAudio = document.getElementById("mainAudio");
 const playPauseBtnNew = document.getElementById("playPauseBtnNew");
@@ -3993,51 +3894,25 @@ Email: saesvibe.collabs@icloud.com`;
   }
 });
 
-listenerClubBtn.addEventListener("click", () => {
-  const subject = encodeURIComponent("Join The Sae Talk Listener Club");
-  const body = encodeURIComponent(
-    "Hi Sae,\n\nI'd love to join The Sae Talk Listener Club and get notified when new episodes drop.\n\nName:\nFavorite topics:\n"
-  );
-  showToast("Opening Listener Club email 💌");
-  window.location.href = `mailto:saesvibe.collabs@icloud.com?subject=${subject}&body=${body}`;
-});
+const openContactFormBtn = document.getElementById("openContactFormBtn");
 
-suggestTopicBtn.addEventListener("click", () => {
-  const subject = encodeURIComponent("Podcast topic suggestion for The Sae Talk");
-  const body = encodeURIComponent(
-    "Hi Sae,\n\nI have a topic suggestion for The Sae Talk:\n\nTopic title:\nWhy I'd love this episode:\n"
-  );
-  showToast("Opening topic suggestion ✉️");
-  window.location.href = `mailto:saesvibe.collabs@icloud.com?subject=${subject}&body=${body}`;
-});
-
-document.querySelectorAll(".episode-btn-notify").forEach((button) => {
-  button.addEventListener("click", () => {
-    const subject = encodeURIComponent("Notify me about The Sae Talk");
-    const body = encodeURIComponent(
-      "Hi Sae,\n\nPlease notify me when the next podcast episode drops 💗\n"
-    );
-    showToast("Opening notify email 🔔");
-    window.location.href = `mailto:saesvibe.collabs@icloud.com?subject=${subject}&body=${body}`;
+if (openContactFormBtn) {
+  openContactFormBtn.addEventListener("click", () => {
+    handleScrollTarget("#contact-form");
   });
-});
+}
 
-document.querySelectorAll(".newsletter-chip").forEach((chip) => {
-  chip.addEventListener("click", () => {
-    chip.classList.toggle("active");
-    const input = chip.querySelector("input");
-    input.checked = !input.checked;
+if (listenerClubBtn) {
+  listenerClubBtn.addEventListener("click", () => {
+    handleScrollTarget("#contact-form");
   });
-});
+}
 
-copyNewsletterEmailBtn.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText("saesvibe.collabs@icloud.com");
-    showToast("Newsletter email copied 💌");
-  } catch {
-    showToast("Could not copy email");
-  }
-});
+if (suggestTopicBtn) {
+  suggestTopicBtn.addEventListener("click", () => {
+    handleScrollTarget("#contact-form");
+  });
+}
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return "0:00";
@@ -4218,7 +4093,6 @@ if (savedTheme === "night" || savedTheme === "pink") {
 }
 
 renderBooks();
-// renderForwardList(); // Initialize forward list
 loadTrack(0, false);
 updateActiveNav();
 window.addEventListener("scroll", updateActiveNav);
