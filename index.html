@@ -2484,6 +2484,18 @@ overflow: hidden;
   padding: 22px;
   box-shadow: var(--shadow);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  .connect-card {
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+select.newsletter-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 }
 
 .connect-card:hover {
@@ -3370,114 +3382,186 @@ overflow: hidden;
           </div>
         </a>
 
-        <a href="mailto:saesvibe.collabs@icloud.com" class="connect-card">
-          <div class="connect-icon">✉️</div>
-          <div class="connect-info">
-            <h4>Email</h4>
-            <p>Collabs & inquiries</p>
-          </div>
-        </a>
+        <button class="connect-card" id="openContactFormBtn" type="button">
+  <div class="connect-icon">✉️</div>
+  <div class="connect-info">
+    <h4>Email</h4>
+    <p>Collabs & inquiries</p>
+  </div>
+</button>
       </div>
     </section>
 
     <section id="inner-circle" class="section reveal">
-      <div class="section-header">
-        <h2>The Inner Circle</h2>
-        <p>A newsletter for little life updates, new episodes, and favorites worth sharing.</p>
-      </div>
+  <div class="section-header">
+    <h2>The Inner Circle</h2>
+    <p>A newsletter for little life updates, new episodes, and favorites worth sharing.</p>
+  </div>
 
-      <div class="glass-card newsletter-card">
-        <div class="newsletter-layout">
-          <div class="newsletter-side">
-            <h3>Join the soft newsletter</h3>
-            <p>
-              Think of it like getting a pretty note in your inbox. New podcast drops, favorite
-              finds, book thoughts, and tiny updates from saesvibe.
-            </p>
+  <div class="glass-card newsletter-card">
+    <div class="newsletter-layout">
+      <div class="newsletter-side">
+        <h3>Join the soft newsletter</h3>
+        <p>
+          Think of it like getting a pretty note in your inbox. New podcast drops, favorite
+          finds, book thoughts, and tiny updates from saesvibe.
+        </p>
 
-            <div class="newsletter-benefits">
-              <div class="newsletter-benefit">
-                <div>💌</div>
-                <div>
-                  <strong>Podcast first</strong>
-                  <span>Be first to hear when a new Sae Talk episode goes live.</span>
-                </div>
-              </div>
-
-              <div class="newsletter-benefit">
-                <div>📚</div>
-                <div>
-                  <strong>Book notes</strong>
-                  <span>Get reading updates, ratings, mini reviews, and current favorites.</span>
-                </div>
-              </div>
-
-              <div class="newsletter-benefit">
-                <div>🎀</div>
-                <div>
-                  <strong>Monthly favorites</strong>
-                  <span>Beauty picks, routines, pink finds, and little lovely things.</span>
-                </div>
-              </div>
+        <div class="newsletter-benefits">
+          <div class="newsletter-benefit">
+            <div>💌</div>
+            <div>
+              <strong>Podcast first</strong>
+              <span>Be first to hear when a new Sae Talk episode goes live.</span>
             </div>
           </div>
 
-          <div class="newsletter-form">
-            <h4>Sign up</h4>
-
-            <div class="newsletter-form-row">
-              <label for="newsletterName">Your name</label>
-              <input id="newsletterName" class="newsletter-input" type="text" placeholder="Your name" />
+          <div class="newsletter-benefit">
+            <div>📚</div>
+            <div>
+              <strong>Book notes</strong>
+              <span>Get reading updates, ratings, mini reviews, and current favorites.</span>
             </div>
+          </div>
 
-            <div class="newsletter-form-row">
-              <label for="newsletterEmail">Your email</label>
-              <input id="newsletterEmail" class="newsletter-input" type="email" placeholder="you@example.com" />
-            </div>
-
-            <div class="newsletter-form-row">
-              <label>What would you love to receive?</label>
-              <div class="newsletter-chips">
-                <label class="newsletter-chip active">
-                  <input type="checkbox" checked value="Podcast updates" />
-                  Podcast updates
-                </label>
-                <label class="newsletter-chip active">
-                  <input type="checkbox" checked value="Book notes" />
-                  Book notes
-                </label>
-                <label class="newsletter-chip">
-                  <input type="checkbox" value="Beauty favorites" />
-                  Beauty favorites
-                </label>
-                <label class="newsletter-chip">
-                  <input type="checkbox" value="Monthly favorites" />
-                  Monthly favorites
-                </label>
-              </div>
-            </div>
-
-            <div class="newsletter-form-row">
-              <label for="newsletterMessage">Optional note</label>
-              <textarea
-                id="newsletterMessage"
-                class="newsletter-textarea"
-                placeholder="Tell me the topics you'd love most..."
-              ></textarea>
-            </div>
-
-            <div class="newsletter-actions">
-              <button class="newsletter-btn primary" id="joinNewsletterBtn" type="button">Join the Inner Circle</button>
-              <button class="newsletter-btn secondary" id="copyNewsletterEmailBtn" type="button">Copy newsletter email</button>
-            </div>
-
-            <div class="newsletter-note">
-              You can keep this as an email sign-up for now, then connect it to a real newsletter service later.
+          <div class="newsletter-benefit">
+            <div>🎀</div>
+            <div>
+              <strong>Monthly favorites</strong>
+              <span>Beauty picks, routines, pink finds, and little lovely things.</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <form
+        class="newsletter-form"
+        id="newsletterForm"
+        action="https://formspree.io/f/xyknnzke"
+        method="POST"
+      >
+        <h4>Sign up</h4>
+
+        <input type="hidden" name="_subject" value="New saesvibe Inner Circle signup" />
+        <input type="hidden" name="form_type" value="Inner Circle Signup" />
+
+        <div class="newsletter-form-row">
+          <label for="newsletterName">Your name</label>
+          <input id="newsletterName" name="name" class="newsletter-input" type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="newsletter-form-row">
+          <label for="newsletterEmail">Your email</label>
+          <input id="newsletterEmail" name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="newsletter-form-row">
+          <label>What would you love to receive?</label>
+          <div class="newsletter-chips">
+            <label class="newsletter-chip active">
+              <input type="checkbox" checked value="Podcast updates" />
+              Podcast updates
+            </label>
+            <label class="newsletter-chip active">
+              <input type="checkbox" checked value="Book notes" />
+              Book notes
+            </label>
+            <label class="newsletter-chip">
+              <input type="checkbox" value="Beauty favorites" />
+              Beauty favorites
+            </label>
+            <label class="newsletter-chip">
+              <input type="checkbox" value="Monthly favorites" />
+              Monthly favorites
+            </label>
+          </div>
+          <input type="hidden" name="interests" id="newsletterInterests" />
+        </div>
+
+        <div class="newsletter-form-row">
+          <label for="newsletterMessage">Optional note</label>
+          <textarea
+            id="newsletterMessage"
+            name="message"
+            class="newsletter-textarea"
+            placeholder="Tell me the topics you'd love most..."
+          ></textarea>
+        </div>
+
+        <div class="newsletter-actions">
+         <button class="newsletter-btn primary" type="submit">
+          <button class="newsletter-btn secondary" id="copyNewsletterEmailBtn" type="button">Copy newsletter email</button>
+        </div>
+
+        <div class="newsletter-note" id="newsletterStatus">
+          You can keep this as an email sign-up for now, then connect it to a full newsletter service later.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact-form" class="section reveal">
+  <div class="section-header">
+    <h2>Send me a note</h2>
+    <p>For collabs, podcast ideas, listener club requests, or just a sweet message.</p>
+  </div>
+
+  <div class="glass-card newsletter-card">
+    <form
+      class="newsletter-form"
+      id="contactForm"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+    >
+      <h4>Contact saesvibe</h4>
+
+      <input type="hidden" name="_subject" value="New saesvibe contact form message" />
+      <input type="hidden" name="form_type" id="contactFormType" value="General Message" />
+
+      <div class="newsletter-form-row">
+        <label for="contactName">Your name</label>
+        <input id="contactName" name="name" class="newsletter-input" type="text" placeholder="Your name" required />
+      </div>
+
+      <div class="newsletter-form-row">
+        <label for="contactEmail">Your email</label>
+        <input id="contactEmail" name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="newsletter-form-row">
+        <label for="contactReason">What is this about?</label>
+        <select id="contactReason" name="reason" class="newsletter-input" required>
+          <option value="">Choose one</option>
+          <option value="Collab Inquiry">Collab Inquiry</option>
+          <option value="Podcast Topic Suggestion">Podcast Topic Suggestion</option>
+          <option value="Listener Club">Listener Club</option>
+          <option value="General Message">General Message</option>
+        </select>
+      </div>
+
+      <div class="newsletter-form-row">
+        <label for="contactMessage">Your message</label>
+        <textarea
+          id="contactMessage"
+          name="message"
+          class="newsletter-textarea"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="newsletter-actions">
+        <button class="newsletter-btn primary" type="submit">Send message</button>
+        <button class="newsletter-btn secondary" type="button" data-scroll="#connect">Back to connect</button>
+      </div>
+
+      <div class="newsletter-note" id="contactStatus">
+        Your message will be sent directly from the website.
+      </div>
+    </form>
+  </div>
+</section>
 
     <section id="about" class="section reveal">
       <div class="section-header">
@@ -3944,24 +4028,6 @@ document.querySelectorAll(".newsletter-chip").forEach((chip) => {
     const input = chip.querySelector("input");
     input.checked = !input.checked;
   });
-});
-
-joinNewsletterBtn.addEventListener("click", () => {
-  const name = newsletterName.value.trim();
-  const email = newsletterEmail.value.trim();
-  const message = newsletterMessage.value.trim();
-
-  const selections = [...document.querySelectorAll(".newsletter-chip input:checked")]
-    .map((input) => input.value)
-    .join(", ");
-
-  const subject = encodeURIComponent("Join saesvibe Inner Circle");
-  const body = encodeURIComponent(
-    `Hi Sae,\n\nI'd love to join the saesvibe Inner Circle.\n\nName: ${name || ""}\nEmail: ${email || ""}\nWhat I'd love to receive: ${selections || "No preferences selected"}\n\nOptional note:\n${message || ""}\n`
-  );
-
-  showToast("Welcome to the Inner Circle ✨");
-  window.location.href = `mailto:saesvibe.collabs@icloud.com?subject=${subject}&body=${body}`;
 });
 
 copyNewsletterEmailBtn.addEventListener("click", async () => {
