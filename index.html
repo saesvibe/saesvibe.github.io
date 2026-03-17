@@ -384,7 +384,8 @@ a {
   z-index: 1;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 118px 0 84px;
+
+  padding: 140px 0 84px; /* 🔥 increased */
 }
 
 .reveal {
@@ -1145,11 +1146,8 @@ a {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-
   overflow: hidden;
-  margin-bottom: auto; /* Pushes actions to bottom */
+  margin-bottom: auto;
 }
 
 .episode-meta-card {
@@ -1727,9 +1725,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding-top: 2px;
+  align-items: stretch; /* 🔥 THIS FIXES IT */
+  width: 100%; /* 🔥 IMPORTANT */
 }
 
 .segment-control {
@@ -1996,11 +1993,9 @@ a {
 .book-info .note {
   font-size: 13px;
   color: var(--text-muted);
-  display: -webkit-box;
--webkit-box-orient: vertical;
 
--webkit-line-clamp: 2;
-line-clamp: 2;
+display: -webkit-box;
+-webkit-box-orient: vertical;
 
 overflow: hidden;
 }
@@ -2796,7 +2791,7 @@ select.newsletter-input {
 @media (max-width: 720px) {
   .main {
     width: min(100% - 22px, 1180px);
-    padding-top: 110px;
+    padding-top: 140px; /* 🔥 increased */
   }
 
   .hero-content h1 {
@@ -2937,6 +2932,13 @@ button:active {
 }
 /* ===== MOBILE FIX: BOOKS + LITTLE JOYS ===== */
 @media (max-width: 768px) {
+  .books-header {
+  grid-template-columns: 1fr; /* 🔥 stack properly */
+}
+
+.books-controls {
+  width: 100%;
+}
 
   /* BOOK FILTERS */
   .segment-control {
@@ -4051,6 +4053,8 @@ progressBarNew.addEventListener("click", (e) => {
 });
 
 document.addEventListener("click", (e) => {
+  if (isDragging) return; // 🔥 prevents accidental click after swipe
+
   const button = e.target.closest(".podcast-load-btn");
   if (!button) return;
 
@@ -4192,6 +4196,10 @@ if (podcastTrack) {
 podcastTrack.addEventListener("mouseup", () => {
   isDown = false;
   podcastTrack.classList.remove("dragging");
+
+  setTimeout(() => {
+    isDragging = false;
+  }, 50);
 });
 
 podcastTrack.addEventListener("mousemove", (e) => {
@@ -4220,6 +4228,11 @@ podcastTrack.addEventListener("mousemove", (e) => {
     const walk = (x - startX) * 1.2;
     podcastTrack.scrollLeft = scrollLeft - walk;
   });
+  podcastTrack.addEventListener("touchend", () => {
+  setTimeout(() => {
+    isDragging = false;
+  }, 50);
+});
 }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
