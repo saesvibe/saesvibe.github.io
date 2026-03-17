@@ -95,7 +95,7 @@ body::before {
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
-  z-index: 9999;
+z-index: 0;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
@@ -1018,28 +1018,23 @@ a {
   display: flex;
   gap: 24px;
   overflow-x: auto;
+
+  /* NEW (Netflix feel) */
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 16px;
+
   scroll-behavior: smooth;
   padding: 12px 16px 34px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  /* Fix for mobile scrolling */
+
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
+  cursor: grab;
 }
-.episode-card {
-  flex: 0 0 300px;
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  margin: 4px 0;
+
+.podcast-track:active {
+  cursor: grabbing;
 }
 
 .podcast-track::-webkit-scrollbar {
@@ -1049,6 +1044,7 @@ a {
 /* --- NEW VERTICAL CARD DESIGN --- */
 .episode-card {
   flex: 0 0 300px; /* Fixed width for cards */
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   background: var(--surface);
@@ -2889,84 +2885,107 @@ select.newsletter-input {
     width: 58px;
     height: 58px;
   }
-  @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+}
+  
+/* ===== BUTTON FIXES ===== */
+
+/* Make sure content is above background */
+.main,
+.nav,
+.mobile-nav-wrap,
+.floating-heart-wrap {
+  position: relative;
+  z-index: 10;
 }
 
+/* Prevent decorative layers from blocking clicks */
+.hero-card::after,
+.glass-card::after,
+.monthly-favorites::after,
+.connect-card::after,
+.episode-card::after,
+.book-item::before,
+.sticker {
+  pointer-events: none;
+}
+
+/* Improve touch responsiveness */
+button,
+a,
+.segment-btn,
+.month-btn,
+.nav-link,
+.mobile-nav-link,
+.mini-pill-btn {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* Better tap feedback */
+button:active {
+  transform: scale(0.96);
+}
+.podcast-track.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto; /* smoother drag */
+}
+/* Fix scroll lag on mobile */
+.podcast-track,
+.mobile-nav-scroll,
+.books-list {
+  -webkit-overflow-scrolling: touch;
+}
+/* ===== MOBILE FIX: BOOKS + LITTLE JOYS ===== */
 @media (max-width: 768px) {
-  .books-wrapper::before {
-    height: 260px;
-  }
 
-  .books-header {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 20px 16px 18px;
-    min-height: auto;
-  }
-
-  .books-title-wrap {
-    padding-top: 0;
-  }
-
-  .books-title-wrap h3 {
-    font-size: 2rem;
-    line-height: 1.1;
-    max-width: 220px;
-  }
-
-  .books-controls {
-    width: 100%;
-    align-items: stretch;
-    gap: 12px;
-  }
-
+  /* BOOK FILTERS */
   .segment-control {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* 🔥 KEY FIX */
+    overflow-x: auto;
     gap: 10px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 24px;
-    justify-content: flex-start;
+    padding: 6px 4px 10px;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .segment-control::-webkit-scrollbar {
+    display: none;
   }
 
   .segment-btn {
-    flex: 1 1 calc(50% - 10px);
-    min-width: 130px;
-    max-width: 100%;
-    width: auto;
-    padding: 12px 14px;
-    font-size: 14px;
-    line-height: 1.2;
-    text-align: center;
-    white-space: normal;
-    border-radius: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .books-wrapper::before {
-    height: 300px;
+    flex: 0 0 auto; /* 🔥 prevents stretching */
+    white-space: nowrap;
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 999px;
   }
 
-  .books-title-wrap h3 {
-    font-size: 1.75rem;
-    max-width: 180px;
+
+  /* MONTH BUTTONS (Little Joys) */
+  .month-selector {
+    display: flex;
+    flex-wrap: nowrap; /* 🔥 KEY FIX */
+    overflow-x: auto;
+    gap: 10px;
+    padding: 6px 4px 10px;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .segment-btn {
-    flex: 1 1 100%;
-    min-width: 100%;
+  .month-selector::-webkit-scrollbar {
+    display: none;
   }
-}
+
+  .month-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 999px;
+  }
 }
 </style>
 </head>
@@ -3556,7 +3575,7 @@ const books = [
     id: 1,
     title: "Atomic Habits",
     author: "James Clear",
-    section: "Currently-reading",
+    section: "currently-reading",
     genre: "Self-help",
     status: "Ongoing",
     vibe: "Discipline",
@@ -3830,25 +3849,24 @@ function attachBookClicks() {
   });
 }
 
-function updateActiveButtons(container, value, attr) {
-  container.querySelectorAll(".segment-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset[attr] === value);
-  });
-}
-
-sectionFilters.addEventListener("click", (e) => {
+// FAST FILTER HANDLING (NO DELAY)
+document.addEventListener("click", function (e) {
   const btn = e.target.closest(".segment-btn");
   if (!btn) return;
-  activeSection = btn.dataset.section;
-  updateActiveButtons(sectionFilters, activeSection, "section");
-  renderBooks();
-});
 
-genreFilters.addEventListener("click", (e) => {
-  const btn = e.target.closest(".segment-btn");
-  if (!btn) return;
-  activeGenre = btn.dataset.genre;
-  updateActiveButtons(genreFilters, activeGenre, "genre");
+  const parent = btn.parentElement;
+
+  parent.querySelectorAll(".segment-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
+  if (btn.dataset.section) {
+    activeSection = btn.dataset.section;
+  }
+
+  if (btn.dataset.genre) {
+    activeGenre = btn.dataset.genre;
+  }
+
   renderBooks();
 });
 
@@ -4032,18 +4050,22 @@ progressBarNew.addEventListener("click", (e) => {
   podcastAudio.currentTime = percent * podcastAudio.duration;
 });
 
-document.querySelectorAll(".podcast-load-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const key = button.dataset.audio;
-    const trackIndex = demoPlaylist.findIndex((track) => track.key === key);
-    if (trackIndex === -1) return;
+document.addEventListener("click", (e) => {
+  const button = e.target.closest(".podcast-load-btn");
+  if (!button) return;
 
-    loadTrack(trackIndex, true);
-    const playerSection = document.querySelector("#player");
-    if (playerSection) {
-      playerSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
+  e.stopPropagation();
+
+  const key = button.dataset.audio;
+  const trackIndex = demoPlaylist.findIndex((track) => track.key === key);
+  if (trackIndex === -1) return;
+
+  loadTrack(trackIndex, true);
+
+  const playerSection = document.querySelector("#player");
+  if (playerSection) {
+    playerSection.scrollIntoView({ behavior: "smooth" });
+  }
 });
 
 floatingHeartBtn.addEventListener("click", () => {
@@ -4129,6 +4151,74 @@ if (podcastTrack && podcastArrowLeft && podcastArrowRight) {
 
   podcastArrowLeft.addEventListener("click", () => {
     podcastTrack.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+}
+// FIX MONTH SELECTOR
+document.querySelectorAll(".month-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".month-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const monthIndex = btn.dataset.month;
+
+    if (typeof loadMonthData === "function") {
+      loadMonthData(monthIndex);
+    }
+  });
+});
+  // ===== NETFLIX SWIPE / DRAG =====
+
+let isDown = false;
+let startX;
+let scrollLeft;
+let isDragging = false;
+
+if (podcastTrack) {
+
+  // MOUSE (desktop)
+  podcastTrack.addEventListener("mousedown", (e) => {
+  isDown = true;
+  isDragging = false;
+  podcastTrack.classList.add("dragging");
+  startX = e.pageX - podcastTrack.offsetLeft;
+  scrollLeft = podcastTrack.scrollLeft;
+});
+
+  podcastTrack.addEventListener("mouseleave", () => {
+  isDown = false;
+  podcastTrack.classList.remove("dragging");
+});
+
+podcastTrack.addEventListener("mouseup", () => {
+  isDown = false;
+  podcastTrack.classList.remove("dragging");
+});
+
+podcastTrack.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+
+  const x = e.pageX - podcastTrack.offsetLeft;
+  const walk = (x - startX);
+
+  if (Math.abs(walk) > 5) {
+    isDragging = true;
+  }
+
+  e.preventDefault();
+
+  podcastTrack.scrollLeft = scrollLeft - walk * 1.2;
+});
+
+  // TOUCH (mobile)
+  podcastTrack.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].pageX;
+    scrollLeft = podcastTrack.scrollLeft;
+  });
+
+  podcastTrack.addEventListener("touchmove", (e) => {
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 1.2;
+    podcastTrack.scrollLeft = scrollLeft - walk;
   });
 }
   </script>
