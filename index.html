@@ -88,8 +88,16 @@ body {
   transition: background 0.25s ease, color 0.25s ease;
 }
 
+/* --- AESTHETIC ADDITION 1: FILM GRAIN TEXTURE --- */
 body::before {
-  z-index: 1;
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 button,
@@ -105,6 +113,13 @@ a,
 button {
   border: none;
   background: none;
+  /* Fix for mobile button delay/not clicking */
+  touch-action: manipulation; 
+}
+
+a {
+  /* Fix for link delay */
+  touch-action: manipulation;
 }
 
 .bg-pattern {
@@ -189,7 +204,7 @@ button {
   z-index: 120;
   width: min(1140px, calc(100% - 24px));
   background: var(--surface);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
@@ -235,6 +250,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
+  touch-action: manipulation;
 }
 
 .nav-link:hover {
@@ -284,6 +300,7 @@ button {
   display: grid;
   place-items: center;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  touch-action: manipulation;
 }
 
 .nav-btn:hover {
@@ -334,6 +351,7 @@ button {
   scroll-behavior: smooth;
   scrollbar-width: none;
   flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav-scroll::-webkit-scrollbar {
@@ -352,6 +370,7 @@ button {
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
+  touch-action: manipulation;
 }
 
 .mobile-nav-link.active,
@@ -453,6 +472,7 @@ button {
   gap: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   text-decoration: none;
+  touch-action: manipulation;
 }
 
 .btn-primary {
@@ -517,7 +537,7 @@ button {
 .hero-card,
 .glass-card {
   background: var(--surface);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
@@ -730,6 +750,7 @@ button {
   cursor: pointer;
   white-space: nowrap;
   box-shadow: var(--shadow-soft);
+  touch-action: manipulation;
 }
 
 .listener-btn:hover {
@@ -806,6 +827,7 @@ button {
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .mini-pill-btn:hover {
@@ -835,6 +857,7 @@ button {
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
   text-decoration: none;
+  touch-action: manipulation;
 }
 
 .podcast-cta:hover {
@@ -999,6 +1022,9 @@ button {
   padding: 12px 16px 34px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* Fix for mobile scrolling */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 .episode-card {
   flex: 0 0 300px;
@@ -1294,6 +1320,7 @@ button {
   color: #4a3040;
   display: grid; place-items: center;
   transition: background 0.2s;
+  touch-action: manipulation;
 }
 .ctrl-btn:hover { background: rgba(255,255,255,0.6); }
 .ctrl-btn-main {
@@ -1427,6 +1454,7 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-soft);
+  touch-action: manipulation;
 }
 
 [data-theme="night"] .month-btn {
@@ -1608,6 +1636,7 @@ button {
   white-space: nowrap;
   box-shadow: var(--shadow-soft);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  touch-action: manipulation;
 }
 
 .goal-add-btn:hover {
@@ -1732,6 +1761,7 @@ button {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+  touch-action: manipulation;
 }
 
 .segment-btn:hover {
@@ -1812,6 +1842,7 @@ button {
   text-align: left;
   position: relative;
   isolation: isolate;
+  touch-action: manipulation;
 }
 
 [data-theme="night"] .book-item {
@@ -2349,6 +2380,7 @@ overflow: hidden;
   font-weight: 800;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
+  touch-action: manipulation;
 }
 
 .newsletter-btn.primary {
@@ -2578,6 +2610,7 @@ select.newsletter-input {
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
+  touch-action: manipulation;
 }
 
 .heart-sheet-btn:hover {
@@ -2597,6 +2630,7 @@ select.newsletter-input {
   cursor: pointer;
   font-size: 26px;
   transition: transform 0.2s ease;
+  touch-action: manipulation;
 }
 
 .floating-heart-btn:hover {
@@ -2865,16 +2899,7 @@ select.newsletter-input {
     scroll-behavior: auto !important;
   }
 }
-@media (hover: none) {
-  .hero-card:hover::after,
-  .glass-card:hover::after,
-  .book-item:hover,
-  .episode-card:hover,
-  .btn:hover {
-    transform: none;
-    animation: none;
-  }
-}
+
 @media (max-width: 768px) {
   .books-wrapper::before {
     height: 260px;
@@ -3443,7 +3468,8 @@ select.newsletter-input {
       <div class="newsletter-form-row">
         <label for="contactMessage">Your message</label>
         <textarea
-          id="          name="message"
+          id="contactMessage"
+          name="message"
           class="newsletter-textarea"
           placeholder="Write your message here..."
           required
@@ -3795,7 +3821,8 @@ function renderBookDetail(bookId) {
 }
 
 function attachBookClicks() {
-  document.querySelectorAll(".book-item[data-book-id]").forEach((card) => {
+  document.querySelectorAll(".book-item[data-book-id]").
+  forEach((card) => {
     card.addEventListener("click", () => {
       selectedBookId = Number(card.dataset.bookId);
       renderBooks();
