@@ -3655,7 +3655,8 @@ button:active {
   <div class="toast-wrap" id="toastWrap"></div>
   
   <audio id="mainAudio" preload="metadata"></audio>
-
+  <!-- Add this in <head> -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
 const books = [
   {
@@ -4248,22 +4249,84 @@ if (podcastTrack && podcastArrowLeft && podcastArrowRight) {
   });
 }
 
-// FIX MONTH SELECTOR
+// ===== SUPABASE CONNECTION =====
+// REPLACE THESE WITH YOUR ACTUAL KEYS FROM SUPABASE DASHBOARD > SETTINGS > API
+const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co'; 
+const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE';
+
+// Initialize Supabase Client
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ===== LOAD MONTH DATA FUNCTION =====
+async function loadMonthData(monthIndex) {
+  const forwardList = document.getElementById('forwardList');
+  const forwardCount = document.getElementById('forwardCount');
+
+  if (!forwardList) return;
+
+  // Show loading state
+  forwardList.innerHTML = '<div class="forward-empty">Loading little joys...</div>';
+
+  try {
+    // 1. Fetch data from Supabase
+    // Assumes your table is named 'little_joys' and has a 'month' column (0=March, 1=April, etc.)
+    const { data, error } = await supabaseClient
+      .from('little_joys') 
+      .select('*')
+      .eq('month', monthIndex); 
+
+    if (error) throw error;
+
+    // 2. Update Count
+    if (forwardCount) {
+      forwardCount.textContent = `${data.length} little things`;
+    }
+
+    // 3. Render List
+    if (data && data.length > 0) {
+      forwardList.innerHTML = data.map(item => `
+        <div class="forward-item">
+          <div class="forward-top">
+            <div class="forward-icon">${item.icon || '✨'}</div>
+            <span class="forward-tag">${item.tag || 'Goal'}</span>
+          </div>
+          <p class="forward-text">${item.text || item.title}</p>
+        </div>
+      `).join('');
+    } else {
+      forwardList.innerHTML = '<div class="forward-empty">No little things added for this month yet. Add some from your admin panel!</div>';
+    }
+
+  } catch (err) {
+    console.error('Error loading data:', err);
+    forwardList.innerHTML = '<div class="forward-empty">Could not load data. Check console for errors.</div>';
+  }
+}
+
+// ===== MONTH SELECTOR FIX =====
 document.querySelectorAll(".month-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".month-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
     const monthIndex = btn.dataset.month;
-
-    if (typeof loadMonthData === "function") {
-      loadMonthData(monthIndex);
-    }
+    loadMonthData(monthIndex); // Call the function defined above
   });
 });
 
-  // ===== NETFLIX SWIPE / DRAG =====
+// ===== INITIAL LOAD =====
+// Load the first month (March/0) when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if we are on the live site
+  if (SUPABASE_URL !== 'https://YOUR_PROJECT_ID.supabase.co') {
+     loadMonthData(0); 
+  } else {
+    console.warn("Please update SUPABASE_URL and SUPABASE_ANON_KEY in the script.");
+  }
+});
 
+
+// ===== NETFLIX SWIPE / DRAG =====
 let isDown = false;
 let startX;
 let scrollLeft;
