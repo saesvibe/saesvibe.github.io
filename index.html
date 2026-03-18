@@ -4251,8 +4251,8 @@ if (podcastTrack && podcastArrowLeft && podcastArrowRight) {
 
 // ===== SUPABASE CONNECTION =====
 // REPLACE THESE WITH YOUR ACTUAL KEYS FROM SUPABASE DASHBOARD > SETTINGS > API
-const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co'; 
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE';
+const SUPABASE_URL = 'urfozryoqwywjnvbrqmt'; 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVyZm96cnlvcXd5d2pudmJycW10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1ODA1OTEsImV4cCI6MjA4OTE1NjU5MX0.JJrAavUWi_WISw58LxGSk6g6sAh_GrVJQ_egPDj1JAw';
 
 // Initialize Supabase Client
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -4318,7 +4318,7 @@ document.querySelectorAll(".month-btn").forEach(btn => {
 // Load the first month (March/0) when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   // Check if we are on the live site
-  if (SUPABASE_URL !== 'https://YOUR_PROJECT_ID.supabase.co') {
+  if (SUPABASE_URL !== 'https://urfozryoqwywjnvbrqmt.supabase.co') {
      loadMonthData(0); 
   } else {
     console.warn("Please update SUPABASE_URL and SUPABASE_ANON_KEY in the script.");
