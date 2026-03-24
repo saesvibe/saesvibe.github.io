@@ -2948,8 +2948,8 @@ button:active {
                 <h4 class="episode-title-card">Welcome to The Sae Talk</h4>
                 <p class="episode-desc-card">A tiny intro to the vibe: the honest talks, the pink lifestyle and habits that actually stick.</p>
                 <div class="episode-meta-card">
-                  <span>📅 Mar 2026</span>
-                  <span>⏱️ 01:30</span>
+                  <span>📅 Mar 19 2026</span>
+                  <span>⏱️ 1:07</span>
                 </div>
               </div>
             </article>
@@ -2964,12 +2964,11 @@ button:active {
               </div>
               <div class="episode-body">
                 <span class="episode-kicker">Episode 1</span>
-                <div class="coming-badge">Coming Soon</div>
                 <h4 class="episode-title-card">The Story Behind The Sae Talk + Get To Know Me</h4>
                 <p class="episode-desc-card">Every podcast has a beginning. Sharing the story behind why I started this podcast.</p>
                 <div class="episode-meta-card">
-                  <span>📅 Next Thursday</span>
-                  <span>⏱️</span>
+                  <span>📅 Mar 24 2026</span>
+                  <span>⏱️ 7:30</span>
                 </div>
               </div>
             </article>
@@ -2985,10 +2984,10 @@ button:active {
               </div>
               <div class="episode-body">
                 <span class="episode-kicker">Episode 2</span>
-                <h4 class="episode-title-card">Romanticize Your Routine</h4>
-                <p class="episode-desc-card">Make your habits feel pretty so consistency becomes easier.</p>
+                <h4 class="episode-title-card">How to Romanticize Your Routine</h4>
+                <p class="episode-desc-card">Make your habits feel pretty so consistency and discipline become easier.</p>
                 <div class="episode-meta-card">
-                  <span>📅</span>
+                  <span>📅 Next Thursday</span>
                   <span>⏱️</span>
                 </div>
               </div>
@@ -3162,9 +3161,17 @@ button:active {
 <section id="contact-form" class="section reveal">
   <div class="section-header">
     <h2>Send me a note</h2>
-    <p>For collabs, podcast ideas, listener club requests, or just a sweet message.</p>
+    <p>
+  This is my little inbox 🤍  
+  Whether you’re here to say hi, share something sweet, suggest a podcast idea, or talk about a collab… I’d love to hear from you.
+</p>
   </div>
 
+  <div class="hero-tags" style="justify-content:center; margin-bottom:20px;">
+  <span class="hero-tag">💌 say hi</span>
+  <span class="hero-tag">🎧 podcast ideas</span>
+  <span class="hero-tag">🤍 kind messages</span>
+</div>
   <div class="glass-card newsletter-card">
     <form
       class="newsletter-form"
@@ -3187,16 +3194,13 @@ button:active {
         <input id="contactEmail" name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
       </div>
 
-      <div class="newsletter-form-row">
-        <label for="contactReason">What is this about?</label>
-        <select id="contactReason" name="reason" class="newsletter-input" required>
-          <option value="">Choose one</option>
-          <option value="Collab Inquiry">Collab Inquiry</option>
-          <option value="Podcast Topic Suggestion">Podcast Topic Suggestion</option>
-          <option value="Listener Club">Listener Club</option>
-          <option value="General Message">General Message</option>
-        </select>
-      </div>
+   <select id="contactReason" name="reason" class="newsletter-input" required>
+  <option value="">Choose one</option>
+  <option value="Collab Inquiry">Collab / Work Together</option>
+  <option value="Podcast Topic Suggestion">Podcast Idea 💭</option>
+  <option value="Listener Club">Join Listener Club 🎧</option>
+  <option value="General Message">Just saying hi 🤍</option>
+</select>
 
       <div class="newsletter-form-row">
         <label for="contactMessage">Your message</label>
@@ -3214,10 +3218,22 @@ button:active {
         <button class="newsletter-btn secondary" type="button" data-scroll="#connect">Back to connect</button>
       </div>
 
-      <div class="newsletter-note" id="contactStatus">
-        Your message will be sent directly from the website.
-      </div>
+ <div class="newsletter-note" id="contactStatus">
+  I read every message personally ✧  
+  I usually reply within 1–3 days 🤍
+</div>
     </form>
+    <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--text-muted);">
+  with love, Sarah ✧
+</p>
+<div style="text-align:center; margin-top:18px;">
+  <p style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">
+    or email me directly:
+  </p>
+  <a href="mailto:saesvibe.collabs@icloud.com" class="btn btn-secondary">
+    💌 saesvibe.collabs@icloud.com
+  </a>
+</div>
   </div>
 </section>
 
@@ -3323,7 +3339,7 @@ const demoPlaylist = [
     key: "episode1",
     title: "The Story Behind The Sae Talk + Get To Know Me",
     description: "Every podcast has a beginning. In this first episode of The Sae Talk, I'm sharing the story behind why I started this podcast and the idea that inspired it. I talk about who I am, what kind of content I create, and why I felt the need to create a space for more honest conversations. From beauty and lifestyle to mental health, creativity, books, and the realities behind social media, The Sae Talk is where we explore the things that shape our lives both online and offline. If you want to get to know me and the purpose behind this podcast, this is the episode to start with.",
-    src: ""
+    src: "episodes/episode-1.mp3"
   },
   {
     key: "episode2",
@@ -3663,6 +3679,14 @@ Email: saesvibe.collabs@icloud.com`;
 });
 
 const openContactFormBtn = document.getElementById("openContactFormBtn");
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", () => {
+    document.getElementById("contactStatus").textContent =
+      "Your message is on its way to me 💌✨";
+  });
+}
 
 if (openContactFormBtn) {
   openContactFormBtn.addEventListener("click", () => {
