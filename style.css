@@ -839,8 +839,29 @@ a{touch-action:manipulation}
 }
 
 @media(max-width:768px){
-  .podcast-arrow{width:40px;height:40px;font-size:16px}
-  .episode-card{flex:0 0 260px}
+  .podcast-slider-nav{
+    display:block;
+  }
+
+  .podcast-arrow{
+    display:none;
+  }
+
+  .podcast-track{
+    gap:16px;
+    padding:8px calc((100% - min(86vw, 320px)) / 2) 24px;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:calc((100% - min(86vw, 320px)) / 2);
+  }
+
+  .episode-card{
+    flex:0 0 min(86vw, 320px);
+    scroll-snap-align:center;
+  }
+
+  .episode-art{
+    height:190px;
+  }
 }
 
 .player-wrapper{max-width:900px;margin:0 auto}
@@ -1524,7 +1545,8 @@ button:active{transform:scale(.96)}
   height:100%;
   object-fit:cover;
   position:absolute;
-  inset:0
+  inset:0;
+  padding:0;
 }
 
 .social-links-list{
@@ -2305,4 +2327,276 @@ button:active{transform:scale(.96)}
   .books-header-new{padding:22px 16px 0}
   .books-search-new{padding:0 16px;margin-top:14px}
   .podcast-extras-grid{grid-template-columns:1fr}
+}
+/* ===== YOUTUBE SHOWCASE LAYOUT ===== */
+.yt-section{
+  padding:50px 0 0;
+}
+
+.yt-showcase{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(290px,.9fr);
+  gap:24px;
+  align-items:stretch;
+}
+
+.yt-feature-card,
+.yt-playlists-card{
+  background:var(--surface);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border:1px solid var(--border);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+
+.yt-feature-card{
+  padding:24px;
+}
+
+.yt-playlists-card{
+  padding:24px;
+  background:linear-gradient(180deg,rgba(255,244,247,.96),rgba(255,238,243,.92));
+}
+
+.yt-feature-card::before,
+.yt-playlists-card::before{
+  content:"";
+  position:absolute;
+  inset:auto -35px -55px auto;
+  width:150px;
+  height:150px;
+  background:radial-gradient(circle,rgba(249,215,225,.34) 0%,transparent 68%);
+  pointer-events:none;
+}
+
+.yt-feature-top{
+  margin-bottom:18px;
+}
+
+.yt-feature-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:var(--accent-soft);
+  border:1px solid var(--border);
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--text);
+  margin-bottom:12px;
+}
+
+.yt-feature-top h3,
+.yt-playlists-head h3{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:30px;
+  line-height:1.1;
+  color:var(--heading);
+  margin-bottom:8px;
+}
+
+.yt-feature-top p,
+.yt-playlists-head p{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--text-muted);
+}
+
+.yt-playlists-head{
+  margin-bottom:18px;
+}
+
+.yt-embed-shell{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:26px;
+  overflow:hidden;
+  border:1px solid rgba(249,215,225,.35);
+  background:linear-gradient(135deg,#f9d7e1,#f0e0e3);
+  box-shadow:var(--shadow-soft);
+}
+
+.yt-embed-shell iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+.yt-empty-state{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:28px;
+  background:
+    radial-gradient(circle at top,rgba(255,255,255,.6),transparent 45%),
+    linear-gradient(135deg,rgba(249,215,225,.92),rgba(240,224,227,.94));
+}
+
+.yt-empty-inner{
+  max-width:420px;
+}
+
+.yt-empty-icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.yt-empty-state h4{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:28px;
+  color:var(--heading);
+  margin-bottom:8px;
+}
+
+.yt-empty-state p{
+  font-size:15px;
+  line-height:1.8;
+  color:#6d5860;
+}
+
+.yt-feature-actions{
+  margin-top:18px;
+}
+
+.yt-watch-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  background:linear-gradient(135deg,var(--pink-main),var(--pink-soft));
+  color:#3e2731;
+  font-size:13px;
+  font-weight:800;
+  border:1px solid rgba(249,215,225,.45);
+  box-shadow:var(--shadow-soft);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.yt-watch-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-glow);
+}
+
+.yt-genre-list{
+  display:grid;
+  gap:12px;
+}
+
+.yt-genre-btn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-align:left;
+  padding:15px 16px;
+  border-radius:22px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.6);
+  cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;
+  touch-action:manipulation;
+}
+
+.yt-genre-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-soft);
+  background:rgba(255,255,255,.86);
+}
+
+.yt-genre-btn.active{
+  background:linear-gradient(135deg,var(--pink-main),var(--pink-soft));
+  border-color:transparent;
+  box-shadow:0 10px 24px rgba(200,164,175,.24);
+}
+
+.yt-genre-icon{
+  width:50px;
+  height:50px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  background:rgba(255,255,255,.7);
+  font-size:22px;
+}
+
+.yt-genre-text{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.yt-genre-text strong{
+  font-size:15px;
+  color:var(--heading);
+}
+
+.yt-genre-text small{
+  font-size:12px;
+  color:var(--text-muted);
+}
+
+.yt-suggestion-box{
+  margin-top:18px;
+  padding:18px;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(249,215,225,.36),rgba(240,224,227,.28));
+  border:1px solid var(--border);
+}
+
+.yt-suggestion-box h4{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:22px;
+  color:var(--heading);
+  margin-bottom:8px;
+}
+
+.yt-suggestion-box p{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--text-muted);
+  margin-bottom:14px;
+}
+
+@media(max-width:980px){
+  .yt-showcase{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:720px){
+  .yt-feature-card,
+  .yt-playlists-card{
+    padding:18px;
+    border-radius:26px;
+  }
+
+  .yt-feature-top h3,
+  .yt-playlists-head h3,
+  .yt-empty-state h4{
+    font-size:24px;
+  }
+
+  .yt-genre-btn{
+    padding:13px 14px;
+    border-radius:18px;
+  }
+
+  .yt-genre-icon{
+    width:44px;
+    height:44px;
+    font-size:20px;
+  }
 }

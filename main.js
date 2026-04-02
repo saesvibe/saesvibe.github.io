@@ -656,3 +656,62 @@ renderBooks();
 loadTrack(0, false);
 updateActiveNav();
 window.addEventListener("scroll", updateActiveNav);
+/* ===== YOUTUBE GENRE SWITCHER ===== */
+function renderYouTubePanel(button) {
+  if (!button) return;
+
+  var title = button.dataset.ytTitle || "YouTube";
+  var description = button.dataset.ytDescription || "";
+  var videoId = button.dataset.ytVideo || "";
+  var embedShell = $("ytEmbedShell");
+  var titleEl = $("ytTitle");
+  var descEl = $("ytDescription");
+  var watchLink = $("ytWatchLink");
+
+  if (titleEl) titleEl.textContent = title;
+  if (descEl) descEl.textContent = description;
+
+  if (!embedShell) return;
+
+  if (videoId) {
+    embedShell.innerHTML =
+      '<iframe ' +
+      'src="https://www.youtube.com/embed/' + videoId + '" ' +
+      'title="' + title + ' video" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'allowfullscreen ' +
+      'referrerpolicy="strict-origin-when-cross-origin">' +
+      '</iframe>';
+
+    if (watchLink) {
+      watchLink.href = "https://www.youtube.com/watch?v=" + videoId;
+      watchLink.style.display = "inline-flex";
+    }
+  } else {
+    embedShell.innerHTML =
+      '<div class="yt-empty-state">' +
+        '<div class="yt-empty-inner">' +
+          '<div class="yt-empty-icon">🎀</div>' +
+          '<h4>No videos here yet</h4>' +
+          '<p>' + description + '</p>' +
+        '</div>' +
+      '</div>';
+
+    if (watchLink) {
+      watchLink.style.display = "none";
+    }
+  }
+}
+
+document.querySelectorAll(".yt-genre-btn").forEach(function (button) {
+  button.addEventListener("click", function () {
+    document.querySelectorAll(".yt-genre-btn").forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    renderYouTubePanel(button);
+  });
+});
+
+renderYouTubePanel(document.querySelector(".yt-genre-btn.active"));
