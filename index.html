@@ -6,2745 +6,20 @@
   <title>saesvibe</title>
   <meta name="description" content="A soft, pink corner of the internet where beauty meets lifestyle, books, and tiny habits." />
   <meta name="author" content="saesvibe" />
-  
-  <!-- REPLACED FAVICON WITH CUSTOM PINK 'S' ICON -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F8C8DC'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='60' font-family='Georgia,serif' font-weight='bold' fill='%233e2731'>S</text></svg>" />
-  
-  <!-- Apple Touch Icon for iOS bookmarks -->
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F8C8DC'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='60' font-family='Georgia,serif' font-weight='bold' fill='%233e2731'>S</text></svg>" />
+
+  <!-- ===== FAVICON — right-click a profile button to upload your own logo ===== -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23FFCAD4'/><rect x='2' y='2' width='96' height='96' rx='21' fill='%23F8C8DC'/><text x='46' y='52' dominant-baseline='middle' text-anchor='middle' font-size='58' font-family='Georgia,serif' font-weight='bold' fill='%233e2731'>S</text><text x='78' y='79' dominant-baseline='middle' text-anchor='middle' font-size='16' fill='%233e2731' opacity='.2'>♥</text></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23FFCAD4'/><rect x='2' y='2' width='96' height='96' rx='21' fill='%23F8C8DC'/><text x='46' y='52' dominant-baseline='middle' text-anchor='middle' font-size='58' font-family='Georgia,serif' font-weight='bold' fill='%233e2731'>S</text><text x='78' y='79' dominant-baseline='middle' text-anchor='middle' font-size='16' fill='%233e2731' opacity='.2'>♥</text></svg>" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <meta property="og:title" content="saesvibe">
-<meta property="og:description" content="A soft corner of the internet: beauty, books, lifestyle, and The Sae Talk podcast.">
-<meta property="og:image" content="https://saesvibe.github.io/assets/preview.png">
-<meta property="og:url" content="https://saesvibe.github.io">
-<meta property="og:type" content="website">
-  <style>
-:root {
-  --pink-main: #f9d7e1;
-  --pink-soft: #f0e0e3;
-  --brown: #332202;
-  --white: #fffafc;
-  --rose: #f6cad7;
-  --rose-deep: #eec1cf;
-  --cream: #fcf5f7;
-
-  /* New requested colors integrated globally */
-  --cream-new: #F6F6F4;
-  --pink-accent-new: #FFE9EC;
-  --purple-accent: #A25D96;
-
-  --bg: linear-gradient(180deg, #fff8fa 0%, #fff2f5 100%);
-  --bg-alt: #fffdfd;
-  --surface: rgba(255, 253, 253, 0.78);
-  --surface-strong: rgba(255, 248, 250, 0.95);
-  --text: var(--brown);
-  --text-muted: #9C8B79;
-  --heading: #332202;
-  --accent: var(--pink-main);
-  --accent-strong: #F8C8DC;
-  --accent-soft: rgba(249, 215, 225, 0.32);
-  --accent-soft-2: rgba(240, 224, 227, 0.8);
-  --border: rgba(51, 34, 2, 0.1);
-  --shadow: 0 12px 35px rgba(143, 115, 126, 0.12);
-  --shadow-soft: 0 6px 20px rgba(143, 115, 126, 0.08);
-  --shadow-glow: 0 0 0 1px #A25D96, 0 18px 40px rgba(232, 183, 201, 0.22);
-
-  --radius-xl: 30px;
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
-}
-
-[data-theme="night"] {
-  --bg: linear-gradient(180deg, #2a1e28 0%, #22171f 100%);
-  --bg-alt: #342630;
-  --surface: rgba(63, 45, 58, 0.78);
-  --surface-strong: rgba(74, 54, 68, 0.92);
-  --text: #F8C8DC;
-  --text-muted: #edd5df;
-  --heading: #FFC0CB;
-  --accent: #f9d7e1;
-  --accent-strong: #ffe7f3;
-  --accent-soft: rgba(249, 215, 225, 0.18);
-  --accent-soft-2: rgba(240, 224, 227, 0.16);
-  --border: rgba(249, 215, 225, 0.16);
-  --shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
-  --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.14);
-  --shadow-glow: 0 0 0 1px rgba(249, 215, 225, 0.2), 0 18px 38px rgba(0, 0, 0, 0.25);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-/* --- AESTHETIC ADDITION 1: FILM GRAIN TEXTURE --- */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-z-index: 0;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-button,
-input,
-textarea,
-a,
-.book-item,
-.segment-btn {
-  -webkit-tap-highlight-color: transparent;
-  font: inherit;
-}
-
-button {
-  border: none;
-  background: none;
-  /* Fix for mobile button delay/not clicking */
-  touch-action: manipulation; 
-}
-
-a {
-  /* Fix for link delay */
-  touch-action: manipulation;
-}
-
-.bg-pattern {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.bg-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  animation: float 18s ease-in-out infinite;
-  opacity: 0.55;
-}
-
-.bg-blob:nth-child(1) {
-  width: 520px;
-  height: 520px;
-  top: -140px;
-  right: -150px;
-  background: rgba(249, 215, 225, 0.85);
-}
-
-.bg-blob:nth-child(2) {
-  width: 420px;
-  height: 420px;
-  bottom: -120px;
-  left: -120px;
-  background: rgba(240, 224, 227, 0.75);
-  animation-delay: -5s;
-}
-
-.bg-blob:nth-child(3) {
-  width: 320px;
-  height: 320px;
-  top: 35%;
-  left: 24%;
-  background: rgba(255, 214, 235, 0.32);
-  animation-delay: -10s;
-}
-
-.bg-dots {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(255, 235, 243, 0.08) 0 1.5px, transparent 1.5px),
-    radial-gradient(circle at 78% 16%, rgba(255, 235, 243, 0.07) 0 1.5px, transparent 1.5px),
-    radial-gradient(circle at 68% 80%, rgba(255, 235, 243, 0.08) 0 1.5px, transparent 1.5px),
-    radial-gradient(circle at 28% 74%, rgba(255, 235, 243, 0.07) 0 1.5px, transparent 1.5px);
-  background-size: 230px 230px;
-  opacity: 0.9;
-}
-
-[data-theme="pink"] .bg-dots {
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(51, 34, 2, 0.05) 0 1.5px, transparent 1.5px),
-    radial-gradient(circle at 78% 16%, rgba(51, 34, 2, 0.04) 0 1.5px, transparent 1.5px),
-    radial-gradient(circle at 68% 80%, rgba(51, 34, 2, 0.05) 0 1.5px, transparent 1.5px),
-    radial-gradient(circle at 28% 74%, rgba(51, 34, 2, 0.04) 0 1.5px, transparent 1.5px);
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(26px, -22px) scale(1.05); }
-  66% { transform: translate(-16px, 18px) scale(0.95); }
-}
-
-@keyframes shimmerSweep {
-  0% { transform: translateX(-130%) skewX(-14deg); opacity: 0; }
-  15% { opacity: 0.38; }
-  100% { transform: translateX(220%) skewX(-14deg); opacity: 0; }
-}
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* ===== BRAND Bar (Top) ===== */
-.nav-brand-bar {
-  position: sticky;
-  top: 12px;
-  z-index: 120;
-  width: min(1140px, calc(100% - 24px));
-  margin: 0 auto 24px;
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  border-radius: 28px;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between; /* Logo left, Actions right */
-  align-items: center;
-}
-
-/* ===== Links Bar (Below Brand) ===== */
-.nav-links-bar {
-  position: sticky;
-  top: 90px; /* Sits below the brand bar */
-  z-index: 119; /* Below brand */
-  width: min(1140px, calc(100% - 24px));
-  margin: 0 auto;
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft); /* Lighter shadow */
-  border-radius: 999px;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Brand Logo */
-.nav-brand-bar .nav-brand {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 25px;
-  font-weight: 600;
-  color: var(--heading);
-}
-
-/* Actions on the right */
-.nav-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.nav-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--surface-strong);
-  color: var(--text);
-  font-size: 18px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: transform 0.2s ease, background 0.2s ease;
-  touch-action: manipulation;
-}
-
-.nav-btn:hover {
-  transform: translateY(-1px) scale(1.03);
-  background: var(--accent-soft);
-}
-
-/* Links Styling */
-.nav-links-bar .nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  border: none;
-  background: transparent;
-  color: var(--text-muted);
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  touch-action: manipulation;
-  position: relative;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 4px;
-  width: 0;
-  height: 2px;
-  background: var(--pink-main);
-  transition: width 0.3s;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover {
-  background: var(--accent-soft);
-  color: var(--heading);
-}
-
-.nav-link.active {
-  background: var(--accent-soft);
-  color: var(--heading);
-  box-shadow: var(--shadow-soft);
-}
-
-/* ===== Mobile Adjustments ===== */
-@media (max-width: 720px) {
-  .nav-links-bar {
-    display: none !important; /* Hide links bar on mobile */
-  }
-
-  .nav-brand-bar {
-    width: 100%;
-    border-radius: 0 0 20px 20px;
-    margin-top: 0;
-    padding: 12px 16px;
-  }
-  
-  .nav-link::after {
-    display: none; /* Hide underline animation on mobile if desired */
-  }
-}
-
-.mobile-nav-wrap {
-  display: none;
-  position: sticky;
-  top: 88px;
-  z-index: 110;
-  margin: 12px auto 24px;
-}
-
-.mobile-nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--surface);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  border-radius: 999px;
-  padding: 8px;
-}
-
-.mobile-nav-arrow {
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--surface-strong);
-  color: var(--text);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-}
-
-.mobile-nav-scroll {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  flex: 1;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mobile-nav-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.mobile-nav-link {
-  flex: 0 0 auto;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.28);
-  color: var(--text-muted);
-  border-radius: 999px;
-  padding: 10px 14px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-  touch-action: manipulation;
-}
-
-.mobile-nav-link.active,
-.mobile-nav-link:hover {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-}
-
-.main {
-  position: relative;
-  z-index: 1;
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 24px 0 84px;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero {
-  min-height: calc(100vh - 180px);
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 42px;
-  align-items: center;
-  padding: 34px 0 24px;
-}
-
-.hero-content h1 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(3rem, 8vw, 5.2rem);
-  line-height: 1.03;
-  letter-spacing: -0.04em;
-  font-weight: 500;
-  margin-bottom: 22px;
-  max-width: 720px;
-  color: var(--heading);
-}
-
-.hero-content h1 span {
-  color: var(--accent-strong);
-  font-style: italic;
-  /* Subtle purple text-shadow for outlining the word 'pink' */
-  text-shadow: 0px 2px 8px rgba(162, 93, 150, 0.25);
-}
-
-.hero-content p {
-  max-width: 600px;
-  font-size: 18px;
-  line-height: 1.75;
-  color: var(--text-muted);
-  margin-bottom: 26px;
-}
-
-.hero-tags {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
-.hero-tag {
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 26px;
-}
-
-.btn {
-  border: none;
-  border-radius: 999px;
-  padding: 14px 24px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  text-decoration: none;
-  touch-action: manipulation;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  box-shadow: 0 10px 22px rgba(200, 164, 175, 0.28);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(200, 164, 175, 0.35);
-}
-
-.btn-secondary {
-  background: var(--surface-strong);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.btn-secondary:hover {
-  background: var(--accent-soft);
-  transform: translateY(-2px);
-}
-
-.hero-card,
-.glass-card,
-.monthly-favorites,
-.connect-card,
-.episode-card,
-.book-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-card::after,
-.glass-card::after,
-.monthly-favorites::after,
-.connect-card::after,
-.episode-card::after,
-.book-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.32), transparent);
-  transform: translateX(-130%) skewX(-14deg);
-  pointer-events: none;
-  opacity: 0;
-}
-
-.hero-card:hover::after,
-.glass-card:hover::after,
-.monthly-favorites:hover::after,
-.connect-card:hover::after,
-.episode-card:hover::after,
-.book-item:hover::before {
-  animation: shimmerSweep 1s ease;
-}
-
-.hero-card,
-.glass-card {
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
-}
-
-.hero-card {
-  padding: 30px;
-}
-
-.hero-card::before,
-.glass-card::before {
-  content: "";
-  position: absolute;
-  inset: auto -40px -70px auto;
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, rgba(249, 215, 225, 0.35) 0%, transparent 68%);
-  pointer-events: none;
-}
-
-.hero-card:hover,
-.glass-card:hover,
-.connect-card:hover,
-.episode-card:hover,
-.book-item:hover {
-  box-shadow: var(--shadow-glow);
-}
-
-.hero-card-header {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 20px;
-}
-
-.podcast-vinyl {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-  background:
-    radial-gradient(circle at center, #fff7fa 0 10px, #f9d7e1 10px 18px, #f3cbd6 18px 27px, #eabdc9 27px 39px, #d8aab8 39px 100%);
-  box-shadow:
-    0 16px 28px rgba(143, 115, 126, 0.18),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.35);
-  animation: spinVinyl 12s linear infinite;
-}
-
-.podcast-vinyl::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-top-color: rgba(51, 34, 2, 0.12);
-  border-bottom-color: rgba(51, 34, 2, 0.08);
-}
-
-.podcast-vinyl::after {
-  display: none; /* Removed emoji content */
-}
-
-.vinyl-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 2;
-  animation: counterSpin 12s linear infinite; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-@keyframes spinVinyl {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes counterSpin {
-  to { transform: translate(-50%, -50%) rotate(-360deg); }
-}
-
-.hero-card-info h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 26px;
-  margin-bottom: 3px;
-  color: var(--heading);
-}
-
-.hero-card-info p {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: var(--text-muted);
-}
-
-.podcast-preview {
-  display: grid;
-  gap: 14px;
-}
-
-.podcast-top-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.podcast-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--text);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border: 1px solid var(--border);
-}
-
-.now-playing {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.22), rgba(240, 224, 227, 0.22));
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  width: fit-content;
-}
-
-.equalizer {
-  display: inline-flex;
-  align-items: end;
-  gap: 3px;
-  height: 14px;
-}
-
-.equalizer span {
-  width: 3px;
-  border-radius: 999px;
-  background: var(--heading);
-  animation: bounce 1.1s ease-in-out infinite;
-  opacity: 0.85;
-}
-
-.equalizer span:nth-child(1) { height: 6px; animation-delay: 0s; }
-.equalizer span:nth-child(2) { height: 12px; animation-delay: 0.12s; }
-.equalizer span:nth-child(3) { height: 8px; animation-delay: 0.24s; }
-.equalizer span:nth-child(4) { height: 14px; animation-delay: 0.36s; }
-.equalizer span:nth-child(5) { height: 9px; animation-delay: 0.48s; }
-
-@keyframes bounce {
-  0%, 100% { transform: scaleY(0.55); opacity: 0.6; }
-  50% { transform: scaleY(1.15); opacity: 1; }
-}
-
-.podcast-quote {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-.listener-club {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.22), rgba(240, 224, 227, 0.2));
-  border: 1px solid var(--border);
-}
-
-.listener-club-text strong {
-  display: block;
-  font-size: 14px;
-  color: var(--heading);
-  margin-bottom: 2px;
-}
-
-.listener-club-text span {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.listener-btn {
-  border: none;
-  border-radius: 999px;
-  padding: 11px 16px;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  white-space: nowrap;
-  box-shadow: var(--shadow-soft);
-  touch-action: manipulation;
-}
-
-.listener-btn:hover {
-  transform: translateY(-1px);
-}
-
-.mini-player {
-  display: grid;
-  gap: 12px;
-}
-
-.mini-track {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  align-items: center;
-  background: var(--surface-strong);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 14px;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.mini-track:hover {
-  transform: translateY(-2px);
-  border-color: rgba(249, 215, 225, 0.36);
-  box-shadow: var(--shadow-glow);
-}
-
-.mini-track-main {
-  min-width: 0;
-}
-
-.mini-track-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  font-weight: 800;
-}
-
-.mini-track-main h4 {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--heading);
-  margin-bottom: 4px;
-}
-
-.mini-track-main p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.mini-track-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end; /* Fixed typo here */
-}
-.mini-pill-btn {
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.16);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 10px 13px;
-  font-size: 12px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-  white-space: nowrap;
-  touch-action: manipulation;
-}
-
-.mini-pill-btn:hover {
-  transform: translateY(-1px);
-  background: var(--accent-soft);
-}
-
-.mini-pill-btn.play {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-}
-
-.podcast-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.podcast-cta {
-  border: 1px solid var(--border);
-  background: var(--surface-strong);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 12px 16px;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-  text-decoration: none;
-  touch-action: manipulation;
-}
-
-.podcast-cta:hover {
-  transform: translateY(-1px);
-  background: var(--accent-soft);
-}
-
-.podcast-cta.primary {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-}
-
-.section {
-  padding: 80px 0;
-  scroll-margin-top: 110px;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 42px;
-}
-
-.section-header h2 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  margin-bottom: 10px;
-  color: var(--heading);
-}
-
-.section-header p {
-  max-width: 620px;
-  margin: 0 auto;
-  color: var(--text-muted);
-  font-size: 16px;
-}
-
-.monthly-favorites {
-  padding: 28px;
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  box-shadow: var(--shadow);
-}
-
-.monthly-favorites-head {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.monthly-favorites-head h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 32px;
-  margin-bottom: 8px;
-  color: var(--heading);
-}
-
-.monthly-favorites-head p {
-  color: var(--text-muted);
-  font-size: 15px;
-}
-
-.favorites-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.favorite-mini-card {
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.24), rgba(240, 224, 227, 0.22));
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.favorite-mini-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-glow);
-  border-color: rgba(249, 215, 225, 0.38);
-}
-
-.favorite-mini-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #4a3040;
-  font-size: 22px;
-  margin-bottom: 14px;
-}
-
-.favorite-mini-card label {
-  display: block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.favorite-mini-card h4 {
-  font-size: 17px;
-  color: var(--heading);
-  margin-bottom: 6px;
-}
-
-.favorite-mini-card p {
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* --- HORIZONTAL PODCAST SLIDER --- */
-
-.podcast-slider-wrapper {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.podcast-slider-nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.podcast-arrow {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--heading);
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  display: grid;
-  place-items: center;
-  box-shadow: var(--shadow-soft);
-  z-index: 5;
-}
-
-.podcast-arrow:hover {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  border-color: transparent;
-  transform: scale(1.05);
-}
-
-.podcast-track {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-
-  /* NEW (Netflix feel) */
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 16px;
-
-  scroll-behavior: smooth;
-  padding: 12px 16px 34px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
-  cursor: grab;
-}
-
-.podcast-track:active {
-  cursor: grabbing;
-}
-
-.podcast-track::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-/* --- NEW VERTICAL CARD DESIGN --- */
-.episode-card {
-  flex: 0 0 300px; /* Fixed width for cards */
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-.episode-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-glow);
-}
-
-/* Image Area */
-.episode-art {
-  width: 100%;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-}
-
-.episode-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.episode-card:hover .episode-art img {
-  transform: scale(1.05);
-}
-
-/* Play Button Overlay */
-.episode-play-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(51, 34, 2, 0.15);
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
-}
-
-.episode-card:hover .episode-play-overlay {
-  opacity: 1;
-}
-
-.play-btn-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  display: grid;
-  place-items: center;
-  font-size: 24px;
-  color: #3e2731;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: 1px solid rgba(255,255,255,0.5);
-}
-
-/* Content Area */
-.episode-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-grow: 1;
-}
-
-.episode-kicker {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 800;
-  color: var(--accent-strong);
-}
-
-.episode-title-card {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 19px;
-  line-height: 1.3;
-  color: var(--heading);
-  font-weight: 600;
-}
-
-.episode-desc-card {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden;
-  margin-bottom: auto;
-}
-
-.episode-meta-card {
-  display: flex;
-  gap: 10px;
-  font-size: 12px;
-  color: var(--text-muted);
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-  margin-top: 14px;
-}
-
-/* Badge styling for "Coming Soon" */
-.coming-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--heading);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .podcast-arrow {
-    display: none; /* Hide arrows on mobile, let user swipe */
-  }
-  
-  .episode-card {
-    flex: 0 0 260px; /* Smaller cards on mobile */
-  }
-}
-
-
-/* --- EXISTING PLAYER SECTION CSS (DO NOT DELETE) --- */
-.player-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.player-card-new {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  border-radius: var(--radius-xl);
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 50px rgba(214, 147, 177, 0.25);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  position: relative; 
-  overflow: hidden;
-}
-
-@media (min-width: 700px) {
-  .player-card-new {
-    grid-template-columns: 180px 1fr;
-    align-items: center;
-  }
-}
-
-.player-art-new {
-  width: 180px;
-  height: 180px;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  display: grid;
-  place-items: center;
-  font-size: 60px;
-  color: var(--heading);
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.player-art-new img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.player-content-new {
-  text-align: center;
-}
-
-@media (min-width: 700px) {
-  .player-content-new { text-align: left; }
-}
-
-.player-status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #6d4c5a;
-  margin-bottom: 16px;
-}
-
-.player-status-dot {
-  width: 8px; height: 8px;
-  background: #e91e63;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-
-.player-title-new {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(24px, 5vw, 32px);
-  color: #4a3040;
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.player-desc-new {
-  font-size: 15px;
-  color: #6d4c5a;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  max-width: 500px;
-}
-@media (min-width: 700px) {
-   .player-desc-new { margin-right: auto; margin-bottom: 24px; }
-}
-
-.progress-wrap-new { width: 100%; margin-bottom: 20px; }
-.progress-times { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: #6d4c5a; margin-bottom: 8px; }
-.progress-bar-new { width: 100%; height: 8px; background: rgba(255,255,255,0.5); border-radius: 999px; overflow: hidden; cursor: pointer; }
-.progress-fill-new { height: 100%; background: #fff; width: 0%; border-radius: 999px; transition: width 0.1s linear; }
-
-.controls-new {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-@media (min-width: 700px) {
-  .controls-new { justify-content: flex-start; }
-}
-
-.ctrl-btn {
-  background: rgba(255,255,255,0.4);
-  border: none;
-  width: 50px; height: 50px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  color: #4a3040;
-  display: grid; place-items: center;
-  transition: background 0.2s;
-  touch-action: manipulation;
-}
-.ctrl-btn:hover { background: rgba(255,255,255,0.6); }
-.ctrl-btn-main {
-  width: 70px; height: 70px;
-  background: #fff;
-  font-size: 24px;
-  box-shadow: 0 8px 20px rgba(143, 115, 126, 0.2);
-}
-
-/* --- END PLAYER SECTION CSS --- */
-
-/* --- AESTHETIC ADDITION 4: FLOATING STICKERS --- */
-.sticker {
-  position: absolute;
-  font-size: 28px;
-  filter: drop-shadow(2px 4px 6px rgba(51, 34, 2, 0.15));
-  pointer-events: none;
-  z-index: 5;
-  opacity: 0.9;
-  animation: floatSticker 6s ease-in-out infinite;
-}
-
-.sticker-stationery {
-  animation: none;
-}
-
-@keyframes floatSticker {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
-}
-.books-wrapper {
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  position: relative;
-}
-
-.books-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 220px; 
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.88), rgba(240, 224, 227, 0.96));
-  border-bottom: 1px solid var(--border);
-  pointer-events: none;
-}
-
-[data-theme="night"] .books-wrapper::before {
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.2), rgba(240, 224, 227, 0.16));
-}
-
-.books-header {
-  position: relative;
-  z-index: 1;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  border-bottom: 1px solid var(--border);
-  /* Removed min-height so buttons never get cut off */
-}
-
-.books-title-wrap h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 31px;
-  margin-bottom: 0;
-  color: var(--heading);
-  line-height: 1.15;
-}
-
-.books-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-.segment-control {
-  display: flex;
-  flex-wrap: wrap; /* Allows buttons to wrap to next line if needed */
-  gap: 10px;
-}
-
-/* --- Nicer Buttons (Pill Shaped) --- */
-.segment-btn {
-  padding: 10px 18px;
-  border-radius: 999px; /* Pill shape */
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.65);
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgba(143, 115, 126, 0.06);
-  white-space: nowrap;
-}
-
-.segment-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-soft);
-}
-
-.segment-btn.active {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  border-color: transparent;
-  box-shadow: 0 6px 14px rgba(200, 164, 175, 0.25);
-}
-
-.books-content {
-  display: grid;
-  grid-template-columns: 1fr 1.04fr;
-  min-height: 640px;
-  position: relative;
-  z-index: 1;
-}
-
-.books-list-panel {
-  padding: 26px;
-  border-right: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 100%);
-}
-
-.search-box {
-  width: 100%;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--bg-alt);
-  color: var(--text);
-  padding: 14px 18px;
-  font-size: 15px;
-  outline: none;
-  margin-bottom: 18px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.search-box:focus {
-  border-color: rgba(249, 215, 225, 0.5);
-  box-shadow: 0 0 0 4px rgba(249, 215, 225, 0.18);
-}
-
-.search-box::placeholder {
-  color: var(--text-muted);
-}
-
-.books-list {
-  display: grid;
-  gap: 14px;
-  max-height: 520px;
-  overflow: auto;
-  padding-right: 2px;
-}
-
-.books-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.books-list::-webkit-scrollbar-thumb {
-  background: rgba(249, 215, 225, 0.28);
-  border-radius: 999px;
-}
-
-.book-item {
-  display: flex;
-  gap: 16px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: var(--shadow-soft);
-  cursor: pointer;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-  width: 100%;
-  text-align: left;
-  position: relative;
-  isolation: isolate;
-  touch-action: manipulation;
-}
-
-[data-theme="night"] .book-item {
-  background: rgba(255, 240, 246, 0.06);
-}
-
-.book-item::after {
-  content: "♡";
-  position: absolute;
-  right: 14px;
-  top: 10px;
-  font-size: 15px;
-  opacity: 0.35;
-  color: var(--text-muted);
-  z-index: 2;
-}
-
-.book-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(249, 215, 225, 0.35);
-  background: rgba(255, 255, 255, 0.82);
-}
-
-[data-theme="night"] .book-item:hover {
-  background: rgba(255, 240, 246, 0.1);
-}
-
-.book-item.selected {
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.22), rgba(240, 224, 227, 0.2));
-  border-color: rgba(249, 215, 225, 0.4);
-  box-shadow: var(--shadow-glow);
-}
-
-.book-ribbon {
-  position: absolute;
-  top: 10px;
-  left: -34px;
-  z-index: 2;
-  transform: rotate(-36deg);
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 6px 38px;
-  box-shadow: 0 8px 18px rgba(143, 115, 126, 0.16);
-}
-
-.book-cover {
-  width: 80px;
-  height: 120px;
-  border-radius: 16px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  padding: 8px;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1.25;
-  color: #4a3040;
-  background: linear-gradient(180deg, #fff9fb 0%, var(--pink-main) 100%);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 18px rgba(143, 115, 126, 0.12);
-  overflow: hidden;
-}
-
-.book-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-  display: block;
-}
-
-.book-info {
-  min-width: 0;
-  flex: 1;
-  padding-right: 16px;
-}
-
-.book-info h4 {
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 4px;
-  color: var(--heading);
-}
-
-.book-info .author {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.rating-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 6px 0 10px;
-  flex-wrap: wrap;
-}
-
-.stars {
-  --rating: 0;
-  --star-size: 15px;
-  position: relative;
-  display: inline-inline;
-  font-size: var(--star-size);
-  line-height: 1;
-  letter-spacing: 3px;
-}
-
-.stars::before {
-  content: "★★★★★";
-  color: rgba(51, 34, 2, 0.18);
-}
-
-.stars::after {
-  content: "★★★★★";
-  color: #f2b84b;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: calc((var(--rating) / 5) * 100%);
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.rating-number {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-weight: 800;
-}
-
-.book-meta-line,
-.detail-meta-line {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 6px 0 10px;
-}
-
-.book-meta-pill,
-.detail-meta-pill {
-  font-size: 11px;
-  font-weight: 800;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.book-info .note {
-  font-size: 13px;
-  color: var(--text-muted);
-
-display: -webkit-box;
--webkit-box-orient: vertical;
-
-overflow: hidden;
-}
-
-.book-detail-panel {
-  padding: 30px;
-  position: relative;
-  background:
-    radial-gradient(circle at top right, rgba(249, 215, 225, 0.16), transparent 30%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 100%);
-}
-
-.book-detail-empty {
-  height: 100%;
-  min-height: 420px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: var(--text-muted);
-  padding: 24px;
-}
-
-.empty-state {
-  max-width: 360px;
-  margin: 0 auto;
-}
-
-.empty-icon {
-  width: 88px;
-  height: 88px;
-  margin: 0 auto 16px;
-  border-radius: 28px;
-  display: grid;
-  place-items: center;
-  font-size: 36px;
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.45), rgba(240, 224, 227, 0.65));
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-}
-
-.empty-state h4 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 28px;
-  color: var(--heading);
-  margin-bottom: 8px;
-}
-
-.empty-state p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.8;
-}
-
-.book-detail-card {
-  display: grid;
-  gap: 22px;
-}
-
-.detail-top {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
-.detail-cover {
-  width: 140px;
-  height: auto;
-  border-radius: 22px;
-  overflow: hidden;
-  background: linear-gradient(180deg, #fff9fb 0%, var(--pink-main) 100%);
-  border: 1px solid var(--border);
-  box-shadow: 0 16px 28px rgba(143, 115, 126, 0.16);
-  display: grid;
-  place-items: center;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 800;
-  text-align: center;
-  color: #4a3040;
-}
-
-.detail-cover img {
-  width: 100%;
-  height: auto;
-  border-radius: 22px;
-  object-fit: contain;
-  display: block;
-}
-
-.detail-meta h4 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 30px;
-  line-height: 1.1;
-  margin-bottom: 8px;
-  color: var(--heading);
-}
-
-.detail-author {
-  color: var(--text-muted);
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.detail-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.detail-badge {
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  font-size: 12px;
-  font-weight: 800;
-  box-shadow: var(--shadow-soft);
-}
-
-.detail-box {
-  background: rgba(255, 255, 255, 0.58);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 18px 18px 16px;
-  box-shadow: var(--shadow-soft);
-}
-
-[data-theme="night"] .detail-box {
-  background: rgba(255, 240, 246, 0.06);
-}
-
-.detail-box h5 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-  font-weight: 800;
-}
-
-.detail-text {
-  color: var(--text);
-  white-space: pre-wrap;
-  line-height: 1.8;
-  font-size: 15px;
-}
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.detail-small {
-  font-size: 14px;
-  color: var(--text);
-  line-height: 1.75;
-}
-
-.progress-wrap {
-  margin-top: 8px;
-}
-
-.progress-label {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(51, 34, 2, 0.08);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-}
-
-.quote-box {
-  font-style: italic;
-}
-
-.newsletter-card {
-  padding: 34px;
-}
-
-.newsletter-layout {
-  display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
-  gap: 24px;
-  align-items: stretch;
-}
-
-.newsletter-side {
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.55), rgba(240, 224, 227, 0.72));
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  box-shadow: var(--shadow-soft);
-  padding: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-[data-theme="night"] .newsletter-side {
-  background: linear-gradient(135deg, rgba(249, 215, 225, 0.15), rgba(240, 224, 227, 0.12));
-}
-
-.newsletter-side::after {
-  content: "💌";
-  position: absolute;
-  right: 18px;
-  bottom: 8px;
-  font-size: 72px;
-  opacity: 0.15;
-}
-
-.newsletter-side h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 30px;
-  line-height: 1.1;
-  color: var(--heading);
-  margin-bottom: 10px;
-}
-
-.newsletter-side p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.newsletter-benefits {
-  display: grid;
-  gap: 12px;
-}
-
-.newsletter-benefit {
-  display: flex;
-  align-items: start;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid var(--border);
-}
-
-[data-theme="night"] .newsletter-benefit {
-  background: rgba(255, 240, 246, 0.06);
-}
-
-.newsletter-benefit strong {
-  display: block;
-  font-size: 14px;
-  color: var(--heading);
-  margin-bottom: 2px;
-}
-
-.newsletter-benefit span {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.newsletter-form {
-  background: var(--surface-strong);
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  box-shadow: var(--shadow-soft);
-  padding: 24px;
-  display: grid;
-  gap: 18px;
-}
-
-.newsletter-form h4 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-}
-
-.newsletter-form-row {
-  display: grid;
-  gap: 8px;
-}
-
-.newsletter-form label {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.newsletter-input,
-.newsletter-textarea {
-  width: 100%;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: var(--bg-alt);
-  color: var(--text);
-  padding: 14px 16px;
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.newsletter-textarea {
-  min-height: 120px;
-  resize: vertical;
-  border-radius: 20px;
-}
-
-.newsletter-input:focus,
-.newsletter-textarea:focus {
-  border-color: rgba(249, 215, 225, 0.5);
-  box-shadow: 0 0 0 4px rgba(249, 215, 225, 0.18);
-}
-
-.newsletter-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.newsletter-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.52);
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-  user-select: none;
-}
-
-.newsletter-chip:hover {
-  transform: translateY(-1px);
-  background: var(--accent-soft);
-}
-
-.newsletter-chip input {
-  accent-color: #d18da3;
-  pointer-events: none;
-}
-
-.newsletter-chip.active {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-}
-
-.newsletter-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-}
-
-.newsletter-btn {
-  border-radius: 999px;
-  padding: 14px 20px;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-  touch-action: manipulation;
-}
-
-.newsletter-btn.primary {
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  box-shadow: var(--shadow-soft);
-}
-
-.newsletter-btn.secondary {
-  background: var(--surface-strong);
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
-.newsletter-btn:hover {
-  transform: translateY(-2px);
-}
-
-.newsletter-note {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.about-card {
-  padding: 34px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 24px;
-  align-items: center;
-}
-
-.about-visual {
-  min-height: 280px;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.85), transparent 20%),
-    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.35), transparent 22%),
-    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.25), transparent 18%),
-    linear-gradient(135deg, rgba(249, 215, 225, 0.8), rgba(240, 224, 227, 0.9));
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-}
-
-.about-visual::before,
-.about-visual::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 1px dashed rgba(51, 34, 2, 0.15);
-}
-
-.about-visual::before {
-  width: 180px;
-  height: 180px;
-  animation: spinVinyl 18s linear infinite;
-}
-
-.about-visual::after {
-  width: 250px;
-  height: 250px;
-  animation: counterSpin 28s linear infinite;
-}
-
-.about-image {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 10px 30px rgba(143, 115, 126, 0.2);
-  z-index: 2;
-  position: relative;
-}
-
-.about-copy h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 34px;
-  line-height: 1.1;
-  margin-bottom: 14px;
-  color: var(--heading);
-}
-
-.about-copy p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.85;
-  margin-bottom: 14px;
-  max-width: 640px;
-}
-
-.about-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.about-tag {
-  padding: 9px 14px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  border: 1px solid var(--border);
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--text);
-}
-
-.connect-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px;
-}
-
-.connect-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: inherit;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  font: inherit;
-}
-
-.connect-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(249, 215, 225, 0.32);
-}
-
-select.newsletter-input {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.connect-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(249, 215, 225, 0.32);
-}
-
-.connect-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #4a3040;
-  font-size: 22px;
-  flex-shrink: 0;
-}
-
-.connect-info h4 {
-  font-size: 17px;
-  margin-bottom: 2px;
-  color: var(--heading);
-}
-
-.connect-info p {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.floating-heart-wrap {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 130;
-  display: grid;
-  justify-items: end;
-  gap: 10px;
-}
-
-.heart-sheet {
-  width: min(280px, calc(100vw - 30px));
-  background: var(--surface);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  border-radius: 24px;
-  padding: 14px;
-  display: grid;
-  gap: 8px;
-  transform: translateY(12px) scale(0.98);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.22s ease, transform 0.22s ease;
-}
-
-.heart-sheet.open {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.heart-sheet-title {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 20px;
-  color: var(--heading);
-  padding: 2px 6px 8px;
-}
-
-.heart-sheet-btn {
-  width: 100%;
-  text-align: left;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.18);
-  color: var(--text);
-  padding: 12px 14px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  touch-action: manipulation;
-}
-
-.heart-sheet-btn:hover {
-  background: var(--accent-soft);
-  transform: translateX(-2px);
-}
-
-.floating-heart-btn {
-  width: 62px;
-  height: 62px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
-  color: #3e2731;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 16px 35px rgba(200, 164, 175, 0.3);
-  cursor: pointer;
-  font-size: 26px;
-  transition: transform 0.2s ease;
-  touch-action: manipulation;
-}
-
-.floating-heart-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-.toast-wrap {
-  position: fixed;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  z-index: 150;
-  display: grid;
-  gap: 10px;
-  pointer-events: none;
-  width: min(100%, 520px);
-  padding: 0 14px;
-}
-
-.toast {
-  background: var(--surface);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
-  color: var(--text);
-  box-shadow: var(--shadow);
-  border-radius: 999px;
-  padding: 14px 18px;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  transform: translateY(16px);
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.footer {
-  padding: 40px 0 12px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 14px;
-}
-
-@media (max-width: 1080px) {
-  .mini-track,
-  .audio-player-shell,
-  .newsletter-layout,
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mini-track-actions,
-  .audio-controls {
-    justify-content: flex-start;
-  }
-
-  .books-header {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .books-controls {
-    align-items: stretch;
-  }
-}
-
-@media (max-width: 980px) {
-  .nav {
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "brand actions";
-  border-radius: 999px;
-  padding: 10px 12px;
-}
-
-.nav-links {
-  display: none;
-}
-  .hero,
-  .favorites-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    gap: 28px;
-    min-height: auto;
-  }
-
-  .hero-content,
-  .section-header {
-    text-align: center;
-  }
-
-  .hero-content p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-tags,
-  .hero-actions,
-  .podcast-hero-actions,
-  .about-tags {
-    justify-content: center;
-  }
-
-  .nav {
-    width: calc(100% - 20px);
-  }
-
-
-  .mobile-nav-wrap {
-    display: block;
-  }
-
-  .hero-card-header,
-  .podcast-top-row,
-  .listener-club {
-    justify-content: center;
-  }
-
-  .listener-club {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .books-wrapper::before {
-    height: 210px;
-  }
-
-  .books-header {
-    border-bottom: 1px solid var(--border);
-    padding-top: 20px;
-  }
-
-  .books-title-wrap {
-    padding-top: 4px;
-  }
-
-  .books-controls {
-    align-items: stretch;
-  }
-
-  .books-content {
-    grid-template-columns: 1fr;
-  }
-
-  .books-list-panel {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .about-copy,
-  .audio-main {
-    text-align: center;
-  }
-
-  .audio-progress-meta {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 720px) {
-  /* 🔥 HIDE MOBILE NAVIGATION BAR COMPLETELY */
-  .mobile-nav-wrap {
-    display: none !important;
-  }
-
-  .main {
-    padding-top: 100px; /* Adjusted spacing since nav is gone */
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.7rem, 13vw, 4.2rem);
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-
-  .detail-top {
-    grid-template-columns: 1fr;
-  }
-
-  .detail-cover {
-    margin: 0 auto;
-  }
-
-  .detail-meta {
-    text-align: center;
-  }
-
-  .detail-badges,
-  .detail-meta-line {
-    justify-content: center;
-  }
-
-  .detail-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* 💥 FIX: Mobile Nav Stack */
-  .nav {
-    top: 0;
-    border-radius: 0 0 20px 20px;
-    margin-top: 0;
-    width: 100%;
-    padding: 8px 16px;
-  }
-
-  /* 💥 FIX: Books Section - No Cut Off & Alignment */
-  .books-wrapper::before {
-    display: none; /* Remove the fixed height pseudo-element */
-  }
-
-  .books-header {
-    /* Apply background directly to header so it grows with content */
-    background: linear-gradient(135deg, rgba(249, 215, 225, 0.88), rgba(240, 224, 227, 0.96));
-    border-bottom: 1px solid var(--border);
-    padding: 24px 20px;
-    min-height: auto; /* Allow height to grow */
-    align-items: center;
-    text-align: center;
-  }
-
-  .books-title-wrap h3 {
-    font-size: 24px;
-    width: 100%;
-  }
-
-  .books-controls {
-    gap: 12px;
-    align-items: center; /* Center the filter bars */
-  }
-
-  .segment-control {
-    justify-content: center; /* Fix alignment of buttons */
-    gap: 8px;
-    width: 100%;
-  }
-
-  .segment-btn {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .books-content {
-    min-height: auto;
-  }
-
-  .books-list-panel {
-    padding: 16px;
-  }
-
-  .book-item {
-    padding: 14px;
-  }
-
-  .book-cover {
-    width: 64px;
-    height: 88px;
-  }
-
-  .hero-card,
-  .audio-player-card,
-  .about-card,
-  .newsletter-card,
-  .monthly-favorites {
-    padding: 22px;
-  }
-
-  .podcast-vinyl {
-    width: 82px;
-    height: 82px;
-  }
-
-  .audio-art {
-    margin: 0 auto;
-  }
-
-  .audio-controls {
-    justify-content: center;
-  }
-
-  .newsletter-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .newsletter-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .floating-heart-wrap {
-    right: 14px;
-    bottom: 14px;
-  }
-
-  .floating-heart-btn {
-    width: 58px;
-    height: 58px;
-  }
-}
-  
-/* ===== BUTTON FIXES ===== */
-
-/* Make sure content is above background */
-.main,
-.nav,
-.mobile-nav-wrap,
-.floating-heart-wrap {
-  position: relative;
-  z-index: 10;
-}
-
-/* Prevent decorative layers from blocking clicks */
-.hero-card::after,
-.glass-card::after,
-.monthly-favorites::after,
-.connect-card::after,
-.episode-card::after,
-.book-item::before,
-.sticker {
-  pointer-events: none;
-}
-
-/* Improve touch responsiveness */
-button,
-a,
-.segment-btn,
-.month-btn,
-.nav-link,
-.mobile-nav-link,
-.mini-pill-btn {
-  touch-action: manipulation;
-  cursor: pointer;
-}
-
-/* Better tap feedback */
-button:active {
-  transform: scale(0.96);
-}
-.podcast-track.dragging {
-  cursor: grabbing;
-  scroll-behavior: auto; /* smoother drag */
-}
-/* Fix scroll lag on mobile */
-.podcast-track,
-.mobile-nav-scroll,
-.books-list {
-  -webkit-overflow-scrolling: touch;
-}
-/* ===== MOBILE FIX: BOOKS + LITTLE JOYS ===== */
-@media (max-width: 768px) {
-  .books-controls {
-  align-items: flex-start;
-}
-  .books-header {
-  grid-template-columns: 1fr; /* 🔥 stack properly */
-}
-
-.books-controls {
-  width: 100%;
-}
-
-  /* BOOK FILTERS */
-  .segment-control {
-    display: flex;
-    flex-wrap: nowrap; /* 🔥 KEY FIX */
-    overflow-x: auto;
-    gap: 10px;
-    padding: 6px 4px 10px;
-
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .segment-control::-webkit-scrollbar {
-    display: none;
-  }
-
-.segment-btn {
-  flex: 0 0 auto; /* 🔥 prevents stretching */
-  white-space: nowrap;
-    padding: 10px 16px;
-    font-size: 13px;
-    border-radius: 999px;
-  }
-
-
-  /* MONTH BUTTONS (Little Joys) */
-  .month-selector {
-    display: flex;
-    flex-wrap: nowrap; /* 🔥 KEY FIX */
-    overflow-x: auto;
-    gap: 10px;
-    padding: 6px 4px 10px;
-
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .month-selector::-webkit-scrollbar {
-    display: none;
-  }
-
-  .month-btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 10px 16px;
-    font-size: 13px;
-    border-radius: 999px;
-  }
-}
-</style>
+  <meta property="og:description" content="A soft corner of the internet: beauty, books, lifestyle, and The Sae Talk podcast.">
+  <meta property="og:image" content="https://saesvibe.github.io/assets/preview.png">
+  <meta property="og:url" content="https://saesvibe.github.io">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="bg-pattern" aria-hidden="true">
@@ -2754,489 +29,526 @@ button:active {
     <div class="bg-dots"></div>
   </div>
 
-  <!-- BRAND BAR (Logo + Actions) -->
   <nav class="nav-brand-bar">
-    <div class="nav-brand">saesvibe</div>
+    <div class="nav-brand">
+      <div class="profile-switcher">
+        <!-- PROFILE AVATAR: saesvibe -->
+        <button class="profile-avatar active" id="profileSv" aria-label="saesvibe" type="button">
+          <img src="assets/saesvibe-logo.png" alt="sv" onerror="this.style.display='none';this.parentNode.textContent='S';">
+        </button>
+
+        <!-- PROFILE AVATAR: The Sae Talk -->
+        <button class="profile-avatar" id="profileSt" aria-label="The Sae Talk" type="button">
+          <img src="assets/podcast-logo.jpg" alt="st" onerror="this.style.display='none';this.parentNode.textContent='ST';">
+        </button>
+      </div>
+
+      <!-- Hidden file inputs for logo upload -->
+      <input type="file" id="uploadSv" accept="image/*" style="display:none" aria-hidden="true">
+      <input type="file" id="uploadSt" accept="image/*" style="display:none" aria-hidden="true">
+
+      <span class="nav-brand-text" id="brandText">saesvibe</span>
+    </div>
+
     <div class="nav-actions">
       <button class="nav-btn" id="themeToggle" aria-label="Toggle theme" type="button">🌙</button>
-      <button class="nav-btn" id="scrollTopBtn" aria-label="Confetti" type="button">💗</button>
+      <a href="#" class="nav-btn" id="scrollTopBtn" aria-label="Back to top" style="text-decoration:none;font-size:18px;">💌</a>
     </div>
   </nav>
 
-  <!-- LINKS BAR (Navigation Buttons) -->
-  <nav class="nav-links-bar">
+  <nav class="nav-links-bar" id="navSv">
     <div class="nav-links">
       <button class="nav-link active" data-scroll="#home" type="button">Home</button>
+      <button class="nav-link" data-scroll="#youtube-section" type="button">YouTube</button>
       <button class="nav-link" data-scroll="#favorites-strip" type="button">Favorites</button>
+      <button class="nav-link" data-scroll="#books" type="button">Books</button>
+      <button class="nav-link" data-scroll="#contact-sv" type="button">Contact Me</button>
+      <button class="nav-link" data-scroll="#about" type="button">About</button>
+    </div>
+  </nav>
+
+  <nav class="nav-links-bar" id="navSt" style="display:none">
+    <div class="nav-links">
+      <button class="nav-link active" data-scroll="#home" type="button">Home</button>
       <button class="nav-link" data-scroll="#podcast" type="button">Podcast</button>
       <button class="nav-link" data-scroll="#player" type="button">Player</button>
-      <button class="nav-link" data-scroll="#books" type="button">Books</button>
-      <button class="nav-link" data-scroll="#connect" type="button">Connect</button>
-      <button class="nav-link" data-scroll="#contact-form" type="button">Contact Me</button>
+      <button class="nav-link" data-scroll="#contact-st" type="button">Contact Me</button>
       <button class="nav-link" data-scroll="#about" type="button">About</button>
     </div>
   </nav>
 
   <main class="main">
-    <div class="mobile-nav-wrap">
+    <div class="mobile-nav-wrap" id="mobileNavSv">
       <div class="mobile-nav">
-        <button class="mobile-nav-arrow" id="mobileNavLeft" aria-label="Scroll mobile nav left" type="button">←</button>
+        <button class="mobile-nav-arrow" id="mobileNavLeft" type="button">←</button>
         <div class="mobile-nav-scroll" id="mobileNavScroll">
           <button class="mobile-nav-link active" data-scroll="#home" type="button">Home</button>
+          <button class="mobile-nav-link" data-scroll="#youtube-section" type="button">YouTube</button>
           <button class="mobile-nav-link" data-scroll="#favorites-strip" type="button">Favorites</button>
-          <button class="mobile-nav-link" data-scroll="#podcast" type="button">Podcast</button>
-          <button class="mobile-nav-link" data-scroll="#player" type="button">Player</button>
           <button class="mobile-nav-link" data-scroll="#books" type="button">Books</button>
-          <button class="mobile-nav-link" data-scroll="#connect" type="button">Connect</button>
-          <button class="mobile-nav-link" data-scroll="#contact-form" type="button">Contact Me</button>
+          <button class="mobile-nav-link" data-scroll="#contact-sv" type="button">Contact</button>
           <button class="mobile-nav-link" data-scroll="#about" type="button">About</button>
         </div>
-        <button class="mobile-nav-arrow" id="mobileNavRight" aria-label="Scroll mobile nav right" type="button">→</button>
+        <button class="mobile-nav-arrow" id="mobileNavRight" type="button">→</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav-wrap" id="mobileNavSt" style="display:none">
+      <div class="mobile-nav">
+        <button class="mobile-nav-arrow" type="button">←</button>
+        <div class="mobile-nav-scroll">
+          <button class="mobile-nav-link active" data-scroll="#home" type="button">Home</button>
+          <button class="mobile-nav-link" data-scroll="#podcast" type="button">Podcast</button>
+          <button class="mobile-nav-link" data-scroll="#player" type="button">Player</button>
+          <button class="mobile-nav-link" data-scroll="#contact-st" type="button">Contact</button>
+          <button class="mobile-nav-link" data-scroll="#about" type="button">About</button>
+        </div>
+        <button class="mobile-nav-arrow" type="button">→</button>
       </div>
     </div>
 
     <section id="home" class="hero reveal visible">
-      <div class="hero-content">
+      <div class="hero-content" id="heroTextSv">
         <h1>A soft, <span>pink</span> corner of the internet</h1>
-        <p>
-          Welcome to saesvibe, where beauty meets lifestyle, books, honest talks and tiny habits that
-          make you feel like the best version of you. It's my cozy digital diary where i share with you my ups and downs.
-        </p>
-
+        <p>Welcome to saesvibe, where beauty meets lifestyle, books and tiny habits that make you feel like the best version of you. It's my cozy digital diary where i share with you my ups and downs.</p>
         <div class="hero-tags">
           <span class="hero-tag">✨ Beauty</span>
           <span class="hero-tag">📚 Books</span>
           <span class="hero-tag">💫 Becoming better</span>
           <span class="hero-tag">💗 Pink life</span>
         </div>
-
         <div class="hero-actions">
-          <button class="btn btn-primary" data-scroll="#podcast" type="button">🎧 Go to podcast</button>
-          <button class="btn btn-secondary" id="copySocialsBtn" type="button">🔗 Copy socials</button>
+          <button class="btn btn-primary" id="copySocialsBtn" type="button">🔗 Copy socials</button>
+          <button class="btn btn-secondary" data-scroll="#about" type="button">🌸 About me</button>
+        </div>
+      </div>
+
+      <div class="hero-content" id="heroTextSt" style="display:none">
+        <h1>The <span>honest</span> talks you needed</h1>
+        <p>Welcome to The Sae Talk — my podcast where healing meets habits, real stories meet soft motivation, and every episode feels like a late-night conversation with your best friend.</p>
+        <div class="hero-tags">
+          <span class="hero-tag">🎧 Honest talks</span>
+          <span class="hero-tag">💫 Habits</span>
+          <span class="hero-tag">🧠 Mental health</span>
+          <span class="hero-tag">💗 Healing</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-scroll="#podcast" type="button">🎧 Listen now</button>
+          <button class="btn btn-secondary" data-scroll="#contact-st" type="button">✉ Suggest a topic</button>
         </div>
       </div>
 
       <aside class="hero-card">
-        <div class="sticker" style="top: -10px; right: -10px; transform: rotate(12deg);">🌸</div>
-        
-        <div class="hero-card-header">
-          <div class="podcast-vinyl" aria-hidden="true">
-            <img src="assets/podcast-logo.jpg" class="vinyl-logo" alt="The Sae Talk Logo">
-          </div>
-          <div class="hero-card-info">
-            <h3>The Sae Talk</h3>
-            <p>Healing, habits, and the beauty of being human</p>
+        <div class="sticker" style="top:-10px;right:-10px;transform:rotate(12deg);">🌸</div>
+
+        <div id="socialSv">
+          <div class="hero-social-title">Find me everywhere</div>
+          <div class="hero-social-subtitle">saesvibe's socials ✧</div>
+          <div class="social-links-list">
+            <a href="https://instagram.com/saesvibe" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">📸</div><div class="social-link-text"><h4>Instagram</h4><p>@saesvibe</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://tiktok.com/@saesvibee" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🎵</div><div class="social-link-text"><h4>TikTok</h4><p>@saesvibee</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://pinterest.com/saesvibe" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">📌</div><div class="social-link-text"><h4>Pinterest</h4><p>@saesvibe</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://threads.net/@saesvibe" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🧵</div><div class="social-link-text"><h4>Threads</h4><p>@saesvibe</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://youtube.com/@saesvibee" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">▶️</div><div class="social-link-text"><h4>YouTube</h4><p>@saesvibe</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://beacons.ai/saesvibe" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🔗</div><div class="social-link-text"><h4>Beacons</h4><p>All my links in one place</p></div><span class="social-link-arrow">→</span></a>
           </div>
         </div>
 
-        <div class="podcast-preview">
-          <div class="podcast-top-row">
-            <span class="podcast-chip">mini guide</span>
-            <div class="now-playing">
-              <div class="equalizer" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <span>Now playing</span>
-            </div>
-          </div>
-
-          <p class="podcast-quote">
-            Curating a better life through daily rituals, honest reflection, and the kind of habits that help you bloom at your own pace.
-          </p>
-
-          <div class="listener-club">
-            <div class="listener-club-text">
-              <strong>Join the Listener Club</strong>
-              <span>Get notified when new episodes drop and be the first to hear them.</span>
-            </div>
-            <button class="listener-btn" id="listenerClubBtn" type="button">💌 Join</button>
-          </div>
-
-          <div class="mini-player">
-            <div class="mini-track">
-              <div class="mini-track-main">
-                <div class="mini-track-label">Trailer • Intro</div>
-                <h4>Welcome to The Sae Talk (Podcast Trailer)</h4>
-                <p>A tiny intro to the vibe: the honest talks, the pink lifestyle and habits that actually stick.</p>
-              </div>
-              <div class="mini-track-actions">
-                <button class="mini-pill-btn play podcast-load-btn" data-audio="trailer" type="button">▶ Play trailer</button>
-                <button class="mini-pill-btn" data-scroll="#player" type="button">♡ Open player</button>
-              </div>
-            </div>
-
-            <div class="mini-track">
-              <div class="mini-track-main">
-                <div class="mini-track-label">Episode 1 • Now added</div>
-                <h4>The Story Behind The Sae Talk + Get To Know Me</h4>
-                <p>Every podcast has a beginning. In this first episode, I'm sharing the story behind why I started this podcast and the idea that inspired it.</p>
-              </div>
-              <div class="mini-track-actions">
-                <button class="mini-pill-btn play podcast-load-btn" data-audio="episode1" type="button">▶ Play episode</button>
-                <button class="mini-pill-btn" data-scroll="#player" type="button">♡ Open player</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="podcast-hero-actions">
-            <a href="https://open.spotify.com/show/0d1ueJYmkHtrESzCPtqx4n?si=6rRBAvf-TOSekQAv5Uelpg" target="_blank" rel="noopener" class="podcast-cta" style="text-decoration: none;">🎧 Listen on Spotify</a>
-            <a href="https://podcasts.apple.com/lb/podcast/the-sae-talk/id1885249003" target="_blank" rel="noopener" class="podcast-cta" style="text-decoration: none;">🎙️ Listen on Apple</a>
-            <button class="podcast-cta primary" id="suggestTopicBtn" type="button">✉ Suggest a topic</button>
-            <button class="podcast-cta" data-scroll="#contact-form" type="button">💌 Contact me</button>
+        <div id="socialSt" style="display:none">
+          <div class="hero-social-title">The Sae Talk</div>
+          <div class="hero-social-subtitle">Podcast socials & links 🎧</div>
+          <div class="social-links-list">
+            <a href="https://instagram.com/thesaetalk" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">📸</div><div class="social-link-text"><h4>Instagram</h4><p>@thesaetalk</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://threads.net/@thesaetalk" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🧵</div><div class="social-link-text"><h4>Threads</h4><p>@thesaetalk</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://beacons.ai/thesaetalk" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🔗</div><div class="social-link-text"><h4>Beacons</h4><p>All podcast links</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://open.spotify.com/show/0d1ueJYmkHtrESzCPtqx4n?si=6rRBAvf-TOSekQAv5Uelpg" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🎧</div><div class="social-link-text"><h4>Spotify</h4><p>Listen to The Sae Talk</p></div><span class="social-link-arrow">→</span></a>
+            <a href="https://podcasts.apple.com/lb/podcast/the-sae-talk/id1885249003" target="_blank" rel="noopener" class="social-link-row"><div class="social-link-icon">🎙️</div><div class="social-link-text"><h4>Apple Podcasts</h4><p>Listen to The Sae Talk</p></div><span class="social-link-arrow">→</span></a>
           </div>
         </div>
       </aside>
     </section>
 
-    <section id="favorites-strip" class="section reveal">
-      <div class="monthly-favorites">
-        <div class="sticker sticker-stationery" style="top: 20px; left: 20px; transform: rotate(-8deg);">✨</div>
-
-        <div class="monthly-favorites-head">
-          <h3>Favorites this month</h3>
-          <p>Three tiny things currently making life feel prettier.</p>
-        </div>
-
-        <div class="favorites-strip">
-          <article class="favorite-mini-card">
-            <div class="favorite-mini-icon">📚</div>
-            <label>Current book pick</label>
-            <h4>Atomic Habits</h4>
-            <p>A book I picked up on my journey to building better habits that completely blew me away.</p>
-          </article>
-
-          <article class="favorite-mini-card">
-            <div class="favorite-mini-icon">💄</div>
-            <label>Beauty favorite</label>
-            <h4>Fluffy Cosmetics Milky Lipgloss</h4>
-            <p>A refreshing Huda Beauty dupe with the cutest mily pink shade ever that elevated my makeup look immensly.</p>
-          </article>
-
-          <article class="favorite-mini-card">
-            <div class="favorite-mini-icon">🎵</div>
-            <label>Song on repeat</label>
-            <h4>Human Nature- Michael Jackson</h4>
-            <p>The perfect in-your-feels song. It just makes me nostalgic for some reason.</p>
-          </article>
+    <!-- ===== SAESVIBE CONTENT ===== -->
+    <div id="svContent">
+      <div id="youtube-section" class="yt-section reveal">
+        <div class="yt-card-outer">
+          <div class="yt-card-glow"></div>
+          <a href="https://youtube.com/@saesvibee" target="_blank" rel="noopener" class="yt-card">
+            <div class="yt-decorations">
+              <span class="yt-deco">🌸</span>
+              <span class="yt-deco">✨</span>
+              <span class="yt-deco">🎀</span>
+            </div>
+            <div class="yt-thumb-wrap">
+              <img class="yt-thumb" src="assets/youtube-thumb.jpg" alt="YouTube" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 640 360%27%3E%3Crect fill=%27%23f9d7e1%27 width=%27640%27 height=%27360%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-size=%2748%27 fill=%27%233e2731%27%3E▶ saesvibe%3C/text%3E%3C/svg%3E'">
+              <div class="yt-thumb-overlay"><div class="yt-play-btn">▶</div></div>
+            </div>
+            <div class="yt-body">
+              <div class="yt-icon-wrap">▶️</div>
+              <div class="yt-info">
+                <h4>saesvibe on YouTube</h4>
+                <p>Beauty, lifestyle & pink vibes ✧</p>
+              </div>
+              <span class="yt-badge">Watch →</span>
+            </div>
+          </a>
         </div>
       </div>
-    </section>
 
-    <section id="podcast" class="section reveal">
-      <div class="section-header">
-        <h2>The Sae Talk</h2>
-        <p>My honesty lounge to a better life.</p>
-      </div>
-
-      <!-- THIS IS THE NEW SLIDER PART -->
-      <div class="podcast-slider-wrapper">
-        <div class="podcast-slider-nav">
-          <button class="podcast-arrow" id="podcastArrowLeft">←</button>
-          
-          <div class="podcast-track" id="podcastTrack">
-            
-            <!-- Card 1: Trailer -->
-            <article class="episode-card">
-              <div class="episode-art">
-                <img src="assets/podcast-logo.jpg" alt="Trailer">
-                <div class="episode-play-overlay podcast-load-btn" data-audio="trailer">
-                  <div class="play-btn-circle">▶</div>
-                </div>
-              </div>
-              <div class="episode-body">
-                <span class="episode-kicker">Trailer</span>
-                <h4 class="episode-title-card">Welcome to The Sae Talk</h4>
-                <p class="episode-desc-card">A tiny intro to the vibe: the honest talks, the pink lifestyle and habits that actually stick.</p>
-                <div class="episode-meta-card">
-                  <span>📅 Mar 19 2026</span>
-                  <span>⏱️ 1:07</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 2: Episode 1 -->
-            <article class="episode-card">
-              <div class="episode-art">
-                <img src="assets/podcast-logo.jpg" alt="Episode 1">
-                <div class="episode-play-overlay podcast-load-btn" data-audio="episode1">
-                  <div class="play-btn-circle">▶</div>
-                </div>
-              </div>
-              <div class="episode-body">
-                <span class="episode-kicker">Episode 1</span>
-                <h4 class="episode-title-card">The Story Behind The Sae Talk + Get To Know Me</h4>
-                <p class="episode-desc-card">Every podcast has a beginning. Sharing the story behind why I started this podcast.</p>
-                <div class="episode-meta-card">
-                  <span>📅 Mar 24 2026</span>
-                  <span>⏱️ 7:30</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 3: Episode 2 (Coming Soon) -->
-            <article class="episode-card">
-              <div class="coming-badge">Coming Soon</div>
-              <div class="episode-art">
-                <img src="assets/podcast-logo.jpg" alt="Episode 2">
-                <div class="episode-play-overlay podcast-load-btn" data-audio="episode2">
-                  <div class="play-btn-circle">▶</div>
-                </div>
-              </div>
-              <div class="episode-body">
-                <span class="episode-kicker">Episode 2</span>
-                <h4 class="episode-title-card">How to Romanticize Your Routine</h4>
-                <p class="episode-desc-card">Make your habits feel pretty so consistency and discipline become easier.</p>
-                <div class="episode-meta-card">
-                  <span>📅 Next Thursday</span>
-                  <span>⏱️</span>
-                </div>
-              </div>
-            </article>
-
+      <section id="favorites-strip" class="section reveal">
+        <div class="monthly-favorites">
+          <div class="sticker sticker-stationery" style="top:20px;left:20px;transform:rotate(-8deg);">✨</div>
+          <div class="monthly-favorites-head">
+            <h3>Favorites this month</h3>
+            <p>Three tiny things currently making life feel prettier.</p>
           </div>
-
-          <button class="podcast-arrow" id="podcastArrowRight">→</button>
-        </div>
-      </div>
-      <!-- END NEW SLIDER PART -->
-
-    </section>
-
-    <section id="player" class="section reveal">
-      <div class="section-header">
-        <h2>The Sae Talk Listening Lounge</h2>
-        <p>The Sae Talk listening nook.</p>
-      </div>
-
-      <div class="player-wrapper">
-        <div class="player-card-new">
-          <div class="sticker sticker-stationery" style="bottom: 20px; right: -15px; transform: rotate(10deg);">🎧</div>
-          
-          <div class="player-art-new" id="playerArtNew">
-             <img src="assets/podcast-logo.jpg" alt="Now Playing Art">
-          </div>
-          
-          <div class="player-content-new">
-            <div class="player-status-pill">
-              <span class="player-status-dot"></span>
-              <span id="playerStatusText">Ready to play</span>
-            </div>
-            
-            <h3 class="player-title-new" id="playerTitleNew">The Sae Talk</h3>
-            <p class="player-desc-new" id="playerDescNew">Select an episode to start listening.</p>
-
-            <div class="progress-wrap-new">
-              <div class="progress-times">
-                <span id="currentTimeNew">0:00</span>
-                <span id="durationNew">0:00</span>
-              </div>
-              <div class="progress-bar-new" id="progressBarNew">
-                <div class="progress-fill-new" id="progressFillNew"></div>
-              </div>
-            </div>
-
-            <div class="controls-new">
-              <button class="ctrl-btn" id="prevBtn" title="Previous">⏮</button>
-              <button class="ctrl-btn ctrl-btn-main" id="playPauseBtnNew" title="Play">▶</button>
-              <button class="ctrl-btn" id="nextBtn" title="Next">⏭</button>
-            </div>
+          <div class="favorites-strip">
+            <article class="favorite-mini-card"><div class="favorite-mini-icon">📚</div><label>Current book pick</label><h4>Atomic Habits</h4><p>A book I picked up on my journey to building better habits that completely blew me away.</p></article>
+            <article class="favorite-mini-card"><div class="favorite-mini-icon">💄</div><label>Beauty favorite</label><h4>Fluffy Cosmetics Milky Lipgloss</h4><p>A refreshing Huda Beauty dupe with the cutest milky pink shade ever.</p></article>
+            <article class="favorite-mini-card"><div class="favorite-mini-icon">🎵</div><label>Song on repeat</label><h4>Human Nature - Michael Jackson</h4><p>The perfect in-your-feels song. It just makes me nostalgic for some reason.</p></article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="books" class="section reveal">
-      <div class="section-header">
-        <h2>Books Corner</h2>
-        <p>My book-obsession in detail.</p>
-      </div>
+      <section id="books" class="section reveal">
+        <div class="section-header">
+          <h2>Books Corner</h2>
+          <p>My book-obsession in detail.</p>
+        </div>
 
-      <div class="books-wrapper">
-        <div class="sticker" style="top: 50px; right: 30px; transform: rotate(5deg); z-index: 2;">📖</div>
+        <div class="books-wrapper-new">
+          <div class="sticker" style="top:20px;right:24px;transform:rotate(5deg);z-index:2;">📖</div>
 
-        <div class="books-header">
-          <div class="books-title-wrap">
+          <div class="books-header-new">
             <h3>📚 My little reading corner</h3>
+            <p>Tap any book to see the full review and thoughts.</p>
+
+            <div class="books-filters-new">
+              <div class="segment-control" id="sectionFilters">
+                <button class="segment-btn active" data-section="all" type="button">All</button>
+                <button class="segment-btn" data-section="currently-reading" type="button">Currently Reading</button>
+                <button class="segment-btn" data-section="to-be-read" type="button">To-Be-Read</button>
+                <button class="segment-btn" data-section="recently-read" type="button">Recently Read</button>
+                <button class="segment-btn" data-section="favorites" type="button">Favorites</button>
+              </div>
+
+              <div class="segment-control" id="genreFilters">
+                <button class="segment-btn active" data-genre="all" type="button">All Genres</button>
+                <button class="segment-btn" data-genre="Romance" type="button">Romance</button>
+                <button class="segment-btn" data-genre="Self-help" type="button">Self-help</button>
+                <button class="segment-btn" data-genre="Psychology" type="button">Psychology</button>
+              </div>
+            </div>
           </div>
 
-          <div class="books-controls">
-            <div class="segment-control" id="sectionFilters">
-              <button class="segment-btn active" data-section="all" type="button">All Sections</button>
-              <button class="segment-btn" data-section="currently-reading" type="button">Currently Reading</button>
-              <button class="segment-btn" data-section="to-be-read" type="button">To-Be-Read</button>
-              <button class="segment-btn" data-section="recently-read" type="button">Recently Read</button>
-              <button class="segment-btn" data-section="favorites" type="button">Favorites</button>
-            </div>
-
-            <div class="segment-control" id="genreFilters">
-              <button class="segment-btn active" data-genre="all" type="button">All</button>
-              <button class="segment-btn" data-genre="Romance" type="button">Romance</button>
-              <button class="segment-btn" data-genre="Self-help" type="button">Self-help</button>
-              <button class="segment-btn" data-genre="Psychology" type="button">Psychology</button>
-            </div>
+          <div class="books-search-new">
+            <input id="bookSearch" class="search-box" type="text" placeholder="Search by title or author..." />
           </div>
+
+          <div class="books-grid-new" id="booksGrid"></div>
+        </div>
+      </section>
+
+      <section id="contact-sv" class="section reveal">
+        <div class="section-header">
+          <h2>Send me a note</h2>
+          <p>This is my little inbox 🤍<br>Whether you're here to say hi, share something sweet, or talk about a collab… I'd love to hear from you.</p>
         </div>
 
-        <div class="books-content">
-          <div class="books-list-panel">
-            <input
-              id="bookSearch"
-              class="search-box"
-              type="text"
-              placeholder="Search by title or author..."
-            />
-            <div class="books-list" id="booksList"></div>
-          </div>
+        <div class="hero-tags" style="justify-content:center;margin-bottom:20px;">
+          <span class="hero-tag">💌 say hi</span>
+          <span class="hero-tag">🤍 kind messages</span>
+          <span class="hero-tag">💼 collabs</span>
+        </div>
 
-          <div class="book-detail-panel" id="bookDetailPanel">
-            <div class="book-detail-empty">
-              <div class="empty-state">
-                <div class="empty-icon">💗📖</div>
-                <h4>Pick a book</h4>
-                <p>Select a book from the shelf to open the full review, current thoughts, and reading mood.</p>
+        <div class="glass-card newsletter-card">
+          <form class="newsletter-form" id="contactForm" action="https://formspree.io/f/xyknnzke" method="POST">
+            <h4>Contact saesvibe</h4>
+            <input type="hidden" name="_subject" value="New saesvibe contact form message" />
+            <input type="hidden" name="form_type" value="saesvibe Message" />
+
+            <div class="newsletter-form-row">
+              <label>Your name</label>
+              <input name="name" class="newsletter-input" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="newsletter-form-row">
+              <label>Your email</label>
+              <input name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <select name="reason" class="newsletter-input" required>
+              <option value="">Choose one</option>
+              <option value="Collab Inquiry">Collab / Work Together 💼</option>
+              <option value="Brand Partnership">Brand Partnership</option>
+              <option value="Feature Request">Feature / Shoutout Request</option>
+              <option value="General Message">Just saying hi 🤍</option>
+            </select>
+
+            <div class="newsletter-form-row">
+              <label>Your message</label>
+              <textarea name="message" class="newsletter-textarea" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <div class="newsletter-actions">
+              <button class="newsletter-btn primary" type="submit">Send message 💌</button>
+              <button class="newsletter-btn secondary" type="button" data-scroll="#home">Back to socials</button>
+            </div>
+
+            <div class="newsletter-note" id="contactStatus">
+              I read every message personally ✧<br>I usually reply within 1–3 days 🤍
+            </div>
+          </form>
+
+          <p style="text-align:center;margin-top:14px;font-size:13px;color:var(--text-muted);">with love, Sarah ✧</p>
+
+          <div class="contact-extras">
+            <a href="mailto:saesvibe.collabs@gmail.com" class="contact-extra-card" style="text-decoration:none;">
+              <div class="contact-extra-icon">💌</div>
+              <div class="contact-extra-text"><strong>Email directly</strong><span>saesvibe.collabs@gmail.com</span></div>
+            </a>
+
+            <a href="https://beacons.ai/saesvibe" target="_blank" rel="noopener" class="contact-extra-card" style="text-decoration:none;">
+              <div class="contact-extra-icon">🔗</div>
+              <div class="contact-extra-text"><strong>My Beacons</strong><span>All links in one place</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== THE SAE TALK CONTENT ===== -->
+    <div id="stContent" style="display:none">
+      <section id="podcast" class="section reveal">
+        <div class="section-header">
+          <h2>The Sae Talk</h2>
+          <p>My honesty lounge to a better life.</p>
+        </div>
+
+        <div class="podcast-slider-wrapper">
+          <div class="podcast-slider-nav">
+            <button class="podcast-arrow" id="podcastArrowLeft" type="button">←</button>
+
+            <div class="podcast-track" id="podcastTrack">
+              <article class="episode-card">
+                <div class="episode-art">
+                  <img src="assets/podcast-logo.jpg" alt="Trailer">
+                  <div class="episode-play-overlay podcast-load-btn" data-audio="trailer">
+                    <div class="play-btn-circle">▶</div>
+                  </div>
+                </div>
+                <div class="episode-body">
+                  <span class="episode-kicker">Trailer</span>
+                  <h4 class="episode-title-card">Welcome to The Sae Talk</h4>
+                  <p class="episode-desc-card">A tiny intro to the vibe: the honest talks, the pink lifestyle and habits that actually stick.</p>
+                  <div class="episode-meta-card"><span>📅 Mar 19 2026</span><span>⏱️ 1:07</span></div>
+                </div>
+              </article>
+
+              <article class="episode-card">
+                <div class="episode-art">
+                  <img src="assets/podcast-logo.jpg" alt="Episode 1">
+                  <div class="episode-play-overlay podcast-load-btn" data-audio="episode1">
+                    <div class="play-btn-circle">▶</div>
+                  </div>
+                </div>
+                <div class="episode-body">
+                  <span class="episode-kicker">Episode 1</span>
+                  <h4 class="episode-title-card">The Story Behind The Sae Talk + Get To Know Me</h4>
+                  <p class="episode-desc-card">Every podcast has a beginning. Sharing the story behind why I started this podcast.</p>
+                  <div class="episode-meta-card"><span>📅 Mar 24 2026</span><span>⏱️ 7:30</span></div>
+                </div>
+              </article>
+
+              <article class="episode-card">
+                <div class="coming-badge">Coming Soon</div>
+                <div class="episode-art">
+                  <img src="assets/podcast-logo.jpg" alt="Episode 2">
+                  <div class="episode-play-overlay podcast-load-btn" data-audio="episode2">
+                    <div class="play-btn-circle">▶</div>
+                  </div>
+                </div>
+                <div class="episode-body">
+                  <span class="episode-kicker">Episode 2</span>
+                  <h4 class="episode-title-card">How to Romanticize Your Routine</h4>
+                  <p class="episode-desc-card">Make your habits feel pretty so consistency and discipline become easier.</p>
+                  <div class="episode-meta-card"><span>📅 Next Thursday</span><span>⏱️</span></div>
+                </div>
+              </article>
+            </div>
+
+            <button class="podcast-arrow" id="podcastArrowRight" type="button">→</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="player" class="section reveal">
+        <div class="section-header">
+          <h2>The Sae Talk Listening Lounge</h2>
+          <p>The Sae Talk listening nook.</p>
+        </div>
+
+        <div class="player-wrapper">
+          <div class="player-card-new">
+            <div class="sticker sticker-stationery" style="bottom:20px;right:-15px;transform:rotate(10deg);">🎧</div>
+
+            <div class="player-art-new" id="playerArtNew">
+              <img src="assets/podcast-logo.jpg" alt="Now Playing">
+            </div>
+
+            <div class="player-content-new">
+              <div class="player-status-pill">
+                <span class="player-status-dot"></span>
+                <span id="playerStatusText">Ready to play</span>
+              </div>
+
+              <h3 class="player-title-new" id="playerTitleNew">The Sae Talk</h3>
+              <p class="player-desc-new" id="playerDescNew">Select an episode to start listening.</p>
+
+              <div class="progress-wrap-new">
+                <div class="progress-times">
+                  <span id="currentTimeNew">0:00</span>
+                  <span id="durationNew">0:00</span>
+                </div>
+                <div class="progress-bar-new" id="progressBarNew">
+                  <div class="progress-fill-new" id="progressFillNew"></div>
+                </div>
+              </div>
+
+              <div class="controls-new">
+                <button class="ctrl-btn" id="prevBtn" type="button">⏮</button>
+                <button class="ctrl-btn ctrl-btn-main" id="playPauseBtnNew" type="button">▶</button>
+                <button class="ctrl-btn" id="nextBtn" type="button">⏭</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="connect" class="section reveal">
-      <div class="section-header">
-        <h2>Connect</h2>
-        <p>Find me on your favorite platform.</p>
-      </div>
+      <section class="section reveal" style="padding-top:0;">
+        <div class="podcast-extras-grid">
+          <div class="podcast-extra-card"><div class="podcast-extra-icon">💗</div><h4>Why I Started This</h4><p>I needed a space where I could be completely honest — about the messy middle of healing, the beauty of small habits, and the things we don't usually say out loud. The Sae Talk is that space.</p></div>
 
-      <div class="connect-grid">
-        <a href="https://open.spotify.com/show/0d1ueJYmkHtrESzCPtqx4n?si=6rRBAvf-TOSekQAv5Uelpg" target="_blank" rel="noopener" class="connect-card">
-          <div class="connect-icon">🎧</div>
-          <div class="connect-info">
-            <h4>Spotify</h4>
-            <p>The Sae Talk</p>
+          <div class="podcast-extra-card">
+            <div class="podcast-extra-icon">🎧</div>
+            <h4>Listen Everywhere</h4>
+            <p>Catch new episodes every Thursday on your favorite platform.</p>
+            <div class="podcast-listen-links">
+              <a href="https://open.spotify.com/show/0d1ueJYmkHtrESzCPtqx4n?si=6rRBAvf-TOSekQAv5Uelpg" target="_blank" rel="noopener" class="podcast-listen-pill">🎧 Spotify</a>
+              <a href="https://podcasts.apple.com/lb/podcast/the-sae-talk/id1885249003" target="_blank" rel="noopener" class="podcast-listen-pill">🎙️ Apple</a>
+            </div>
           </div>
-        </a>
 
-        <a href="https://podcasts.apple.com/lb/podcast/the-sae-talk/id1885249003" target="_blank" rel="noopener" class="connect-card">
-          <div class="connect-icon">🎙️</div>
-          <div class="connect-info">
-            <h4>Apple Podcasts</h4>
-            <p>The Sae Talk</p>
+          <div class="podcast-extra-card">
+            <div class="podcast-extra-icon">✨</div>
+            <h4>What We Talk About</h4>
+            <div class="topics-grid">
+              <span class="topic-tag">🧠 Mental health</span>
+              <span class="topic-tag">💫 Habits</span>
+              <span class="topic-tag">💗 Self-love</span>
+              <span class="topic-tag">🌸 Lifestyle</span>
+              <span class="topic-tag">📖 Books</span>
+              <span class="topic-tag">🎀 Beauty</span>
+            </div>
           </div>
-        </a>
 
-        <a href="https://instagram.com/saesvibe" target="_blank" rel="noopener" class="connect-card">
-          <div class="connect-icon">📸</div>
-          <div class="connect-info">
-            <h4>Instagram</h4>
-            <p>@saesvibe</p>
+          <div class="podcast-extra-card">
+            <div class="podcast-extra-icon">💌</div>
+            <h4>Join the Listener Club</h4>
+            <p>Be the first to know when new episodes drop, get exclusive behind-the-scenes, and suggest topics.</p>
+            <button class="btn btn-primary" style="margin-top:12px;font-size:13px;padding:11px 18px;" data-scroll="#contact-st" type="button">💌 Join now</button>
           </div>
-        </a>
 
-        <a href="https://tiktok.com/@saesvibee" target="_blank" rel="noopener" class="connect-card">
-          <div class="connect-icon">🎵</div>
-          <div class="connect-info">
-            <h4>TikTok</h4>
-            <p>@saesvibee</p>
+          <div class="podcast-extra-card" style="background:linear-gradient(135deg,rgba(249,215,225,.4),rgba(240,224,227,.35));">
+            <div class="sticker" style="top:12px;right:12px;transform:rotate(8deg);font-size:22px;">🌹</div>
+            <h4>A Little Reminder</h4>
+            <p class="pink-quote">"You don't have to have it all figured out. You just have to keep showing up for yourself — even on the messy days."</p>
           </div>
-        </a>
 
-        <a href="https://youtube.com/@saesvibee" target="_blank" rel="noopener" class="connect-card">
-          <div class="connect-icon">▶️</div>
-          <div class="connect-info">
-            <h4>YouTube</h4>
-            <p>@saesvibe</p>
+          <div class="podcast-extra-card">
+            <div class="podcast-extra-icon">📊</div>
+            <h4>Podcast Vibes</h4>
+            <div class="podcast-stats-row">
+              <span class="podcast-stat">🎙️ Weekly episodes</span>
+              <span class="podcast-stat">⏱️ 10-20 min</span>
+              <span class="podcast-stat">💗 Honest talks</span>
+            </div>
+            <p style="margin-top:12px;">No filler, no fluff — just real conversations about the things that actually matter.</p>
           </div>
-        </a>
+        </div>
+      </section>
 
-        <button class="connect-card" id="openContactFormBtn" type="button">
-  <div class="connect-icon">✉️</div>
-  <div class="connect-info">
-    <h4>Email</h4>
-    <p>Collabs & inquiries</p>
-  </div>
-</button>
-      </div>
-    </section>
+      <section id="contact-st" class="section reveal">
+        <div class="section-header">
+          <h2>The Sae Talk Inbox</h2>
+          <p>Got a podcast idea? Want to be a guest? Just want to say something nice about an episode? This is where you reach me for everything The Sae Talk 🎧💗</p>
+        </div>
 
-<section id="contact-form" class="section reveal">
-  <div class="section-header">
-    <h2>Send me a note</h2>
-    <p>
-  This is my little inbox 🤍  
-  Whether you’re here to say hi, share something sweet, suggest a podcast idea, or talk about a collab… I’d love to hear from you.
-</p>
-  </div>
+        <div class="hero-tags" style="justify-content:center;margin-bottom:20px;">
+          <span class="hero-tag">🎧 podcast ideas</span>
+          <span class="hero-tag">🎤 guest request</span>
+          <span class="hero-tag">💌 kind messages</span>
+          <span class="hero-tag">💼 podcast collabs</span>
+        </div>
 
-  <div class="hero-tags" style="justify-content:center; margin-bottom:20px;">
-  <span class="hero-tag">💌 say hi</span>
-  <span class="hero-tag">🎧 podcast ideas</span>
-  <span class="hero-tag">🤍 kind messages</span>
-</div>
-  <div class="glass-card newsletter-card">
-    <form
-      class="newsletter-form"
-      id="contactForm"
-      action="https://formspree.io/f/xyknnzke"
-      method="POST"
-    >
-      <h4>Contact saesvibe</h4>
+        <div class="glass-card newsletter-card">
+          <form class="newsletter-form" id="contactFormSt" action="https://formspree.io/f/xyknnzke" method="POST">
+            <h4>Contact The Sae Talk</h4>
+            <input type="hidden" name="_subject" value="New The Sae Talk message" />
+            <input type="hidden" name="form_type" value="The Sae Talk Message" />
 
-      <input type="hidden" name="_subject" value="New saesvibe contact form message" />
-      <input type="hidden" name="form_type" id="contactFormType" value="General Message" />
+            <div class="newsletter-form-row">
+              <label>Your name</label>
+              <input name="name" class="newsletter-input" type="text" placeholder="Your name" required />
+            </div>
 
-      <div class="newsletter-form-row">
-        <label for="contactName">Your name</label>
-        <input id="contactName" name="name" class="newsletter-input" type="text" placeholder="Your name" required />
-      </div>
+            <div class="newsletter-form-row">
+              <label>Your email</label>
+              <input name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
+            </div>
 
-      <div class="newsletter-form-row">
-        <label for="contactEmail">Your email</label>
-        <input id="contactEmail" name="email" class="newsletter-input" type="email" placeholder="you@example.com" required />
-      </div>
+            <select name="reason" class="newsletter-input" required>
+              <option value="">Choose one</option>
+              <option value="Podcast Topic Suggestion">Podcast Idea 💭</option>
+              <option value="Guest Request">Be a Guest 🎤</option>
+              <option value="Podcast Collab">Podcast Collab 💼</option>
+              <option value="Listener Feedback">Listener Feedback 💗</option>
+              <option value="General Message">Just saying hi 🤍</option>
+            </select>
 
-   <select id="contactReason" name="reason" class="newsletter-input" required>
-  <option value="">Choose one</option>
-  <option value="Collab Inquiry">Collab / Work Together</option>
-  <option value="Podcast Topic Suggestion">Podcast Idea 💭</option>
-  <option value="Listener Club">Join Listener Club 🎧</option>
-  <option value="General Message">Just saying hi 🤍</option>
-</select>
+            <div class="newsletter-form-row">
+              <label>Your message</label>
+              <textarea name="message" class="newsletter-textarea" placeholder="Write your message here..." required></textarea>
+            </div>
 
-      <div class="newsletter-form-row">
-        <label for="contactMessage">Your message</label>
-        <textarea
-          id="contactMessage"
-          name="message"
-          class="newsletter-textarea"
-          placeholder="Write your message here..."
-          required
-        ></textarea>
-      </div>
+            <div class="newsletter-actions">
+              <button class="newsletter-btn primary" type="submit">Send message 🎧</button>
+              <button class="newsletter-btn secondary" type="button" data-scroll="#home">Back to socials</button>
+            </div>
 
-      <div class="newsletter-actions">
-        <button class="newsletter-btn primary" type="submit">Send message</button>
-        <button class="newsletter-btn secondary" type="button" data-scroll="#connect">Back to connect</button>
-      </div>
+            <div class="newsletter-note" id="stContactStatus">
+              I read every single message ✧<br>Podcast replies within 2–4 days 🎧💗
+            </div>
+          </form>
 
- <div class="newsletter-note" id="contactStatus">
-  I read every message personally ✧  
-  I usually reply within 1–3 days 🤍
-</div>
-    </form>
-    <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--text-muted);">
-  with love, Sarah ✧
-</p>
-<div style="text-align:center; margin-top:18px;">
-  <p style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">
-    or email me directly:
-  </p>
-  <a href="mailto:saesvibe.collabs@icloud.com" class="btn btn-secondary">
-    💌 saesvibe.collabs@icloud.com
-  </a>
-</div>
-  </div>
-</section>
+          <p style="text-align:center;margin-top:14px;font-size:13px;color:var(--text-muted);">with love, Sarah ✧</p>
 
+          <div class="contact-extras">
+            <a href="mailto:thesaetalk@icloud.com" class="contact-extra-card" style="text-decoration:none;">
+              <div class="contact-extra-icon">💌</div>
+              <div class="contact-extra-text"><strong>Email directly</strong><span>thesaetalk@icloud.com</span></div>
+            </a>
+
+            <a href="https://beacons.ai/thesaetalk" target="_blank" rel="noopener" class="contact-extra-card" style="text-decoration:none;">
+              <div class="contact-extra-icon">🔗</div>
+              <div class="contact-extra-text"><strong>Podcast Beacons</strong><span>All podcast links</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== ABOUT (shared) ===== -->
     <section id="about" class="section reveal">
       <div class="section-header">
         <h2>About Saesvibe</h2>
@@ -3245,27 +557,12 @@ button:active {
 
       <div class="glass-card about-card">
         <div class="about-grid">
-          <div class="about-visual">
-             <img src="assets/sarah.jpg" class="about-image" alt="About Me">
-          </div>
-
+          <div class="about-visual"><img src="assets/sarah.jpg" class="about-image" alt="About Me"></div>
           <div class="about-copy">
             <h3>Saesvibe is my quiet rebellion against the rush.</h3>
-            <p>
-              I've always been a firm believer that the space you curate, both in your room and in
-              your mind, dictates your peace. I started this because I was tired of the rush and
-              wanted to document my journey of building a life I don't need a vacation from.
-            </p>
-            <p>
-              This is my digital sanctuary. It's equal parts the books that kept me up until 3:00 AM,
-              the slow morning rituals that keep me sane, and the beauty products that actually
-              feel like self-care rather than a chore.
-            </p>
-            <p>
-              If you're here for soft motivation and a little more magic in the mundane,
-              you've found your spot. Grab a coffee or matcha and stay a while.
-            </p>
-
+            <p>I've always been a firm believer that the space you curate, both in your room and in your mind, dictates your peace. I started this because I was tired of the rush and wanted to document my journey of building a life I don't need a vacation from.</p>
+            <p>This is my digital sanctuary. It's equal parts the books that kept me up until 3:00 AM, the slow morning rituals that keep me sane, and the beauty products that actually feel like self-care rather than a chore.</p>
+            <p>If you're here for soft motivation and a little more magic in the mundane, you've found your spot. Grab a coffee or matcha and stay a while.</p>
             <div class="about-tags">
               <span class="about-tag">Beauty favorites</span>
               <span class="about-tag">Fav reads</span>
@@ -3278,693 +575,30 @@ button:active {
       </div>
     </section>
 
-    <footer class="footer reveal">
-      <p>© 2026 saesvibe. All rights reserved.</p>
-    </footer>
+    <footer class="footer reveal"><p>© 2026 saesvibe. All rights reserved.</p></footer>
   </main>
+
+  <div class="book-modal-overlay" id="bookModalOverlay">
+    <div class="book-modal" id="bookModal">
+      <button class="book-modal-close" id="bookModalClose" type="button">✕</button>
+      <div class="book-modal-inner" id="bookModalInner"></div>
+    </div>
+  </div>
 
   <div class="floating-heart-wrap">
     <div class="heart-sheet" id="heartSheet">
       <div class="heart-sheet-title">Pink Links</div>
-      <button class="heart-sheet-btn" data-scroll="#podcast" type="button">🎧 Go to podcast</button>
       <button class="heart-sheet-btn" data-scroll="#books" type="button">📚 Open books corner</button>
-      <button class="heart-sheet-btn" data-scroll="#connect" type="button">🔗 Connect</button>
-      <button class="heart-sheet-btn" data-scroll="#contact-form" type="button">💌 Contact me</button>
-      <button class="heart-sheet-btn" id="floatingTopBtn" type="button">💗 Back to top</button>
+      <button class="heart-sheet-btn" data-scroll="#home" type="button">🔗 My socials</button>
+      <button class="heart-sheet-btn" data-scroll="#about" type="button">🌸 About</button>
+      <button class="heart-sheet-btn" id="floatingTopBtn" type="button">💌 Back to top</button>
     </div>
-    <button class="floating-heart-btn" id="floatingHeartBtn" aria-label="Open quick access menu" type="button">💗</button>
+    <button class="floating-heart-btn" id="floatingHeartBtn" aria-label="Quick links" type="button">💗</button>
   </div>
 
   <div class="toast-wrap" id="toastWrap"></div>
-  
   <audio id="mainAudio" preload="metadata"></audio>
-  <!-- Add this in <head> -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-const books = [
-  {
-    id: 1,
-    title: "Atomic Habits",
-    author: "James Clear",
-    section: "currently-reading",
-    genre: "Self-help",
-    status: "Ongoing",
-    vibe: "Discipline",
-    cover: "assets/atomic-cover.jpeg",
-    pages: 320,
-    year: 2018,
-    rating: 0,
-    progress: 5,
-    mood: "Extreme Happiness & Motivation",
-    quote: "Your outcomes are a lagging measure of your habits. Your net worth is a lagging measure of your financial habits. Your weight is a lagging measure of your eating habits. Your knowledge is a lagging measure of your learning habits. Your clutter is a lagging measure of your cleaning habits. You get what you repeat.",
-    shortNote:
-      "On my TBR because I want a clean system for discipline that helps me incorporate better habits without feeling overwhelmed. I want these new habits to replace my bad ones that I'm working on getting rid of.",
-    thoughts:
-      "This is one of those books I want to read because I do not just want motivation, I want structure. I like the idea of tiny habits instead of dramatic life overhauls. I feel like it matches the kind of better-version-of-you energy I love, but in a realistic way.",
-    review:
-      "I'm only at the beginning of it so far but my gosh is it GOOD! It's so smooth and filled with so much practical advice that actually makes sense as well as evidence and facts.",
-    whySave:
-      "For those days when motivation is low and I need systems instead of vibes alone."
-  },
-];
 
-const demoPlaylist = [
-  {
-    key: "trailer",
-    title: "Trailer: What is The Sae Talk?",
-    description: "A tiny intro to the vibe: the honest talks, the pink lifestyle and habits that actually stick.",
-    src: "episodes/trailer.mp3"
-  },
-  {
-    key: "episode1",
-    title: "The Story Behind The Sae Talk + Get To Know Me",
-    description: "Every podcast has a beginning. In this first episode of The Sae Talk, I'm sharing the story behind why I started this podcast and the idea that inspired it. I talk about who I am, what kind of content I create, and why I felt the need to create a space for more honest conversations. From beauty and lifestyle to mental health, creativity, books, and the realities behind social media, The Sae Talk is where we explore the things that shape our lives both online and offline. If you want to get to know me and the purpose behind this podcast, this is the episode to start with.",
-    src: "episodes/ep1.mp3"
-  },
-  {
-    key: "episode2",
-    title: "Episode 2: Your Ultimate Guide to Romanticizing Your Life",
-    description: "Make your habits feel pretty so consistency becomes easier.",
-    src: ""
-  }
-];
-
-const booksList = document.getElementById("booksList");
-const bookDetailPanel = document.getElementById("bookDetailPanel");
-const bookSearch = document.getElementById("bookSearch");
-const sectionFilters = document.getElementById("sectionFilters");
-const genreFilters = document.getElementById("genreFilters");
-const themeToggle = document.getElementById("themeToggle");
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-const copySocialsBtn = document.getElementById("copySocialsBtn");
-const listenerClubBtn = document.getElementById("listenerClubBtn");
-const suggestTopicBtn = document.getElementById("suggestTopicBtn");
-const floatingHeartBtn = document.getElementById("floatingHeartBtn");
-const floatingTopBtn = document.getElementById("floatingTopBtn");
-const heartSheet = document.getElementById("heartSheet");
-const toastWrap = document.getElementById("toastWrap");
-const htmlEl = document.documentElement;
-
-const podcastAudio = document.getElementById("mainAudio");
-const playPauseBtnNew = document.getElementById("playPauseBtnNew");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const playerTitleNew = document.getElementById("playerTitleNew");
-const playerDescNew = document.getElementById("playerDescNew");
-const playerStatusText = document.getElementById("playerStatusText");
-const currentTimeNew = document.getElementById("currentTimeNew");
-const durationNew = document.getElementById("durationNew");
-const progressFillNew = document.getElementById("progressFillNew");
-const progressBarNew = document.getElementById("progressBarNew");
-const playerArtNew = document.getElementById("playerArtNew");
-
-let activeSection = "all";
-let activeGenre = "all";
-let searchValue = "";
-let selectedBookId = null;
-let currentTrackIndex = 0;
-
-function showToast(message) {
-  const toast = document.createElement("div");
-  toast.className = "toast";
-  toast.textContent = message;
-  toastWrap.appendChild(toast);
-
-  requestAnimationFrame(() => {
-    toast.classList.add("show");
-  });
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-    setTimeout(() => {
-      toast.remove();
-    }, 260);
-  }, 2300);
-}
-
-function labelizeSection(value) {
-  const map = {
-    "currently-reading": "Currently Reading",
-    "to-be-read": "To-Be-Read",
-    "recently-read": "Recently Read",
-    "favorites": "Favorites"
-  };
-  return map[value] || value;
-}
-
-function createEmptyState(icon, title, text) {
-  return `
-    <div class="book-detail-empty">
-      <div class="empty-state">
-        <div class="empty-icon">${icon}</div>
-        <h4>${title}</h4>
-        <p>${text}</p>
-      </div>
-    </div>
-  `;
-}
-
-function renderBooks() {
-  const filtered = books.filter((book) => {
-    const sectionMatch = activeSection === "all" || book.section === activeSection;
-    const genreMatch = activeGenre === "all" || book.genre === activeGenre;
-    const searchMatch =
-      !searchValue ||
-      book.title.toLowerCase().includes(searchValue) ||
-      book.author.toLowerCase().includes(searchValue);
-    return sectionMatch && genreMatch && searchMatch;
-  });
-
-  if (!filtered.length) {
-    booksList.innerHTML = `
-      <div class="book-item" style="cursor:default;">
-        <div class="book-cover">🌷</div>
-        <div class="book-info">
-          <h4>No books found</h4>
-          <p class="author">Try another section, genre, or search.</p>
-          <p class="note">Nothing matches this mood right now, but your shelf is still cute.</p>
-        </div>
-      </div>
-    `;
-    bookDetailPanel.innerHTML = createEmptyState(
-      "🌷",
-      "No matching books",
-      "Try another filter or search to find a book that fits this exact mood."
-    );
-    return;
-  }
-
-  if (!selectedBookId || !filtered.some((book) => book.id === selectedBookId)) {
-    selectedBookId = filtered[0].id;
-  }
-
-  booksList.innerHTML = filtered
-    .map((book) => {
-      const selectedClass = book.id === selectedBookId ? "selected" : "";
-      const coverContent = book.cover 
-        ? `<img src="${book.cover}" alt="${book.title} cover">` 
-        : book.title;
-      
-      return `
-        <div class="book-item ${selectedClass}" data-book-id="${book.id}">
-          <div class="book-cover">${coverContent}</div>
-          <div class="book-info">
-            <h4>${book.title}</h4>
-            <p class="author">by ${book.author}</p>
-            <p class="note">${book.shortNote}</p>
-          </div>
-        </div>
-      `;
-    })
-    .join("");
-
-  renderBookDetail(selectedBookId);
-  attachBookClicks();
-}
-
-function renderBookDetail(bookId) {
-  const book = books.find((item) => item.id === bookId);
-  if (!book) return;
-  
-  const detailCoverContent = book.cover 
-    ? `<img src="${book.cover}" alt="${book.title} cover">` 
-    : book.title;
-
-  bookDetailPanel.innerHTML = `
-    <div class="book-detail-card">
-      <div class="detail-top">
-        <div class="detail-cover">
-          ${detailCoverContent}
-        </div>
-
-        <div class="detail-meta">
-          <h4>${book.title}</h4>
-          <p class="detail-author">by ${book.author}</p>
-
-          <div class="rating-row">
-            <span class="stars" style="--rating:${book.rating || 0}; --star-size:18px;"></span>
-            <span class="rating-number">${book.rating ? `${book.rating}/5` : "Not rated yet"}</span>
-          </div>
-
-          <div class="detail-meta-line">
-            <span class="detail-meta-pill">${book.pages} pages</span>
-            <span class="detail-meta-pill">${book.year}</span>
-            <span class="detail-meta-pill">${book.genre}</span>
-            <span class="detail-meta-pill">${book.status}</span>
-          </div>
-
-          <div class="detail-badges">
-            <span class="detail-badge">${labelizeSection(book.section)}</span>
-            <span class="detail-badge">${book.vibe}</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="detail-box">
-        <h5>Current thoughts</h5>
-        <p class="detail-text">${book.thoughts}</p>
-      </div>
-
-      <div class="detail-box">
-        <h5>Mini review</h5>
-        <p class="detail-text">${book.review}</p>
-      </div>
-
-      <div class="detail-grid">
-        <div class="detail-box">
-          <h5>Reading mood</h5>
-          <p class="detail-small">${book.mood}</p>
-        </div>
-        <div class="detail-box">
-          <h5>Favorite quote</h5>
-          <p class="detail-small quote-box">${book.quote}</p>
-        </div>
-      </div>
-
-      ${book.section === "currently-reading" ? `
-        <div class="detail-box">
-          <h5>Reading progress</h5>
-          <div class="progress-wrap">
-            <div class="progress-label">${book.progress}% finished</div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:${book.progress}%;"></div>
-            </div>
-          </div>
-        </div>
-      ` : ""}
-
-      <div class="detail-grid">
-        <div class="detail-box">
-          <h5>Vibe</h5>
-          <p class="detail-small">${book.vibe}</p>
-        </div>
-        <div class="detail-box">          <h5>Why I saved it</h5>
-          <p class="detail-small">${book.whySave}</p>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function attachBookClicks() {
-  document.querySelectorAll(".book-item[data-book-id]").
-  forEach((card) => {
-    card.addEventListener("click", () => {
-      selectedBookId = Number(card.dataset.bookId);
-      renderBooks();
-    });
-  });
-}
-
-// FAST FILTER HANDLING (NO DELAY)
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".segment-btn");
-  if (!btn) return;
-
-  const parent = btn.parentElement;
-
-  parent.querySelectorAll(".segment-btn").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-
-  if (btn.dataset.section) {
-    activeSection = btn.dataset.section;
-  }
-
-  if (btn.dataset.genre) {
-    activeGenre = btn.dataset.genre;
-  }
-
-  renderBooks();
-});
-
-bookSearch.addEventListener("input", (e) => {
-  searchValue = e.target.value.trim().toLowerCase();
-  renderBooks();
-});
-
-function setTheme(theme, showMessage = true) {
-  htmlEl.setAttribute("data-theme", theme);
-  localStorage.setItem("saesvibe-theme", theme);
-  themeToggle.textContent = theme === "night" ? "☀️" : "🌙";
-  if (showMessage) {
-    showToast(theme === "night" ? "Night mode on 🌙" : "Pink mode on 💗");
-  }
-}
-
-themeToggle.addEventListener("click", () => {
-  const current = htmlEl.getAttribute("data-theme");
-  setTheme(current === "night" ? "pink" : "night");
-});
-
-function scrollToTopSoft() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// Find the old line:
-// scrollTopBtn.addEventListener("click", scrollToTopSoft);
-
-// REPLACE IT WITH THIS:
-scrollTopBtn.addEventListener("click", () => {
-  // Create 20 pink sparkles/hearts
-  for (let i = 0; i < 20; i++) {
-    const particle = document.createElement('div');
-    particle.innerText = Math.random() > 0.5 ? '💗' : '✨';
-    particle.style.position = 'fixed';
-    particle.style.left = Math.random() * 100 + 'vw';
-    particle.style.top = '-20px';
-    particle.style.fontSize = (Math.random() * 20 + 10) + 'px';
-    particle.style.pointerEvents = 'none';
-    particle.style.zIndex = 9999;
-    particle.style.transition = 'all 1s ease-out';
-    particle.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
-    
-    document.body.appendChild(particle);
-
-    // Remove the particle after animation to keep DOM clean
-    setTimeout(() => particle.remove(), 5000);
-  }
-  
-  showToast("Spreading the pink vibes! 💗");
-});
-
-function handleScrollTarget(selector) {
-  const target = document.querySelector(selector);
-  if (!target) return;
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-document.querySelectorAll("[data-scroll]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    handleScrollTarget(btn.dataset.scroll);
-    if (heartSheet.classList.contains("open")) {
-      heartSheet.classList.remove("open");
-    }
-  });
-});
-
-copySocialsBtn.addEventListener("click", async () => {
-  const text = `Instagram: https://instagram.com/saesvibe
-TikTok: https://tiktok.com/@saesvibee
-YouTube: https://youtube.com/@saesvibee
-Spotify: https://open.spotify.com/show/0d1ueJYmkHtrESzCPtqx4n?si=6rRBAvf-TOSekQAv5Uelpg
-Apple: https://podcasts.apple.com/lb/podcast/the-sae-talk/id1885249003
-Email: saesvibe.collabs@icloud.com`;
-
-  try {
-    await navigator.clipboard.writeText(text);
-    showToast("Socials copied 💗");
-  } catch {
-    showToast("Could not copy socials");
-  }
-});
-
-const openContactFormBtn = document.getElementById("openContactFormBtn");
-const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", () => {
-    document.getElementById("contactStatus").textContent =
-      "Your message is on its way to me 💌✨";
-  });
-}
-
-if (openContactFormBtn) {
-  openContactFormBtn.addEventListener("click", () => {
-    handleScrollTarget("#contact-form");
-  });
-}
-
-if (listenerClubBtn) {
-  listenerClubBtn.addEventListener("click", () => {
-    handleScrollTarget("#contact-form");
-  });
-}
-
-if (suggestTopicBtn) {
-  suggestTopicBtn.addEventListener("click", () => {
-    handleScrollTarget("#contact-form");
-  });
-}
-
-function formatTime(seconds) {
-  if (!Number.isFinite(seconds)) return "0:00";
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
-  return `${mins}:${secs}`;
-}
-
-function loadTrack(index, shouldAutoplay = false) {
-  currentTrackIndex = (index + demoPlaylist.length) % demoPlaylist.length;
-  const track = demoPlaylist[currentTrackIndex];
-
-  podcastAudio.pause();
-  podcastAudio.src = track.src;
-  podcastAudio.load(); 
-
-  playerTitleNew.textContent = track.title;
-  playerDescNew.textContent = track.description;
-  playerStatusText.textContent = "Ready to play";
-  currentTimeNew.textContent = "0:00";
-  durationNew.textContent = "0:00";
-  progressFillNew.style.width = "0%";
-  playPauseBtnNew.textContent = "▶";
-  
-  if (shouldAutoplay) {
-    podcastAudio.play()
-      .then(() => {
-        playPauseBtnNew.textContent = "❚❚";
-        playerStatusText.textContent = "Now playing";
-      })
-      .catch(() => {
-        playerStatusText.textContent = "Could not play";
-      });
-  }
-}
-
-playPauseBtnNew.addEventListener("click", () => {
-  if (!podcastAudio.src) {
-    loadTrack(currentTrackIndex, true);
-    return;
-  }
-
-  if (podcastAudio.paused) {
-    podcastAudio.play()
-      .then(() => {
-        playPauseBtnNew.textContent = "❚❚";
-        playerStatusText.textContent = "Now playing";
-      })
-      .catch(() => {
-        playerStatusText.textContent = "Could not play";
-        showToast("Could not play preview");
-      });
-  } else {
-    podcastAudio.pause();
-    playPauseBtnNew.textContent = "▶";
-    playerStatusText.textContent = "Paused";
-  }
-});
-
-prevBtn.addEventListener("click", () => loadTrack(currentTrackIndex - 1, true));
-nextBtn.addEventListener("click", () => loadTrack(currentTrackIndex + 1, true));
-
-podcastAudio.addEventListener("loadedmetadata", () => {
-  durationNew.textContent = formatTime(podcastAudio.duration);
-});
-
-podcastAudio.addEventListener("timeupdate", () => {
-  const current = podcastAudio.currentTime || 0;
-  const duration = podcastAudio.duration || 0;
-  const percent = duration ? (current / duration) * 100 : 0;
-
-  currentTimeNew.textContent = formatTime(current);
-  durationNew.textContent = formatTime(duration);
-  progressFillNew.style.width = `${percent}%`;
-});
-
-podcastAudio.addEventListener("play", () => {
-  playPauseBtnNew.textContent = "❚❚";
-  playerStatusText.textContent = "Now playing";
-});
-
-podcastAudio.addEventListener("pause", () => {
-  if (podcastAudio.currentTime < podcastAudio.duration || !Number.isFinite(podcastAudio.duration)) {
-    playPauseBtnNew.textContent = "▶";
-  }
-});
-
-podcastAudio.addEventListener("ended", () => {
-  playPauseBtnNew.textContent = "▶";
-  playerStatusText.textContent = "Preview ended";
-  progressFillNew.style.width = "100%";
-});
-
-progressBarNew.addEventListener("click", (e) => {
-  if (!podcastAudio.duration) return;
-  const rect = progressBarNew.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const percent = Math.min(Math.max(clickX / rect.width, 0), 1);
-  podcastAudio.currentTime = percent * podcastAudio.duration;
-});
-
-document.addEventListener("click", (e) => {
-  if (isDragging) return; // 🔥 prevents accidental click after swipe
-
-  const button = e.target.closest(".podcast-load-btn");
-  if (!button) return;
-
-  e.stopPropagation();
-
-  const key = button.dataset.audio;
-  const trackIndex = demoPlaylist.findIndex((track) => track.key === key);
-  if (trackIndex === -1) return;
-
-  loadTrack(trackIndex, true);
-
-  const playerSection = document.querySelector("#player");
-  if (playerSection) {
-    playerSection.scrollIntoView({ behavior: "smooth" });
-  }
-});
-
-floatingHeartBtn.addEventListener("click", () => {
-  heartSheet.classList.toggle("open");
-});
-
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".floating-heart-wrap")) {
-    heartSheet.classList.remove("open");
-  }
-});
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link"); // Updated selector
-// Removed mobileNavLinks reference as it .mobile-nav-wrap is gone
-
-function updateActiveNav() {
-  const scrollY = window.scrollY + 160;
-  sections.forEach((section) => {
-    const top = section.offsetTop;
-    const height = section.offsetHeight;
-    if (scrollY >= top && scrollY < top + height) {
-      navLinks.forEach((link) => {
-        link.classList.toggle("active", link.dataset.scroll === `#${section.id}`);
-      });
-    }
-  });
-}
-
-const revealItems = document.querySelectorAll(".reveal");
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.14 }
-);
-
-revealItems.forEach((item) => {
-  if (!item.classList.contains("visible")) {
-    revealObserver.observe(item);
-  }
-});
-
-const savedTheme = localStorage.getItem("saesvibe-theme");
-if (savedTheme === "night" || savedTheme === "pink") {
-  setTheme(savedTheme, false);
-} else {
-  setTheme("pink", false);
-}
-
-renderBooks();
-loadTrack(0, false);
-updateActiveNav();
-window.addEventListener("scroll", updateActiveNav);
-
-// PODCAST SLIDER ARROWS
-const podcastTrack = document.getElementById("podcastTrack");
-const podcastArrowLeft = document.getElementById("podcastArrowLeft");
-const podcastArrowRight = document.getElementById("podcastArrowRight");
-
-if (podcastTrack && podcastArrowLeft && podcastArrowRight) {
-  const scrollAmount = 324; // Card width + gap
-
-  podcastArrowRight.addEventListener("click", () => {
-    podcastTrack.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  });
-
-  podcastArrowLeft.addEventListener("click", () => {
-    podcastTrack.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-  });
-}
-
-// ===== NETFLIX SWIPE / DRAG =====
-
-let isDown = false;
-let startX;
-let scrollLeft;
-let isDragging = false;
-
-if (podcastTrack) {
-
-  // MOUSE (desktop)
-  podcastTrack.addEventListener("mousedown", (e) => {
-    isDown = true;
-    isDragging = false;
-    podcastTrack.classList.add("dragging");
-    startX = e.pageX - podcastTrack.offsetLeft;
-    scrollLeft = podcastTrack.scrollLeft;
-  });
-
-  podcastTrack.addEventListener("mouseleave", () => {
-    isDown = false;
-    podcastTrack.classList.remove("dragging");
-  });
-
-  podcastTrack.addEventListener("mouseup", () => {
-    isDown = false;
-    podcastTrack.classList.remove("dragging");
-
-    setTimeout(() => {
-      isDragging = false;
-    }, 50);
-  });
-
-  podcastTrack.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-
-    const x = e.pageX - podcastTrack.offsetLeft;
-    const walk = (x - startX);
-
-    if (Math.abs(walk) > 5) {
-      isDragging = true;
-    }
-
-    e.preventDefault();
-
-    podcastTrack.scrollLeft = scrollLeft - walk * 1.2;
-  });
-
-  // TOUCH (mobile)
-  podcastTrack.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].pageX;
-    scrollLeft = podcastTrack.scrollLeft;
-  });
-
-  podcastTrack.addEventListener("touchmove", (e) => {
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 1.2;
-    podcastTrack.scrollLeft = scrollLeft - walk;
-  });
-
-  podcastTrack.addEventListener("touchend", () => {
-    setTimeout(() => {
-      isDragging = false;
-    }, 50);
-  });
-}
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
